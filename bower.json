@@ -1,0 +1,25 @@
+{
+  "name": "spectacular",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jpdevries/spectacular",
+  "authors": [
+    "JP DeVries <johnpaul.devries@gmail.com>"
+  ],
+  "description": "Some spectacular Silent Sass classes, mixins, and breakpoints",
+  "main": "app/assets/stylesheets/spec/tacular.scss",
+  "keywords": [
+    "Sass"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bourbon": "~4.2.5",
+    "neat": "~1.7.2"
+  }
+}
