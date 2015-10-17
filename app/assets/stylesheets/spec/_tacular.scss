@@ -40,6 +40,10 @@ $too-wide:em(1200) !default;
     }
 }
 
+%capitalized {
+    text-transform:uppercase;
+}
+
 %very-greedy {
     width:100%;
 }
@@ -53,13 +57,17 @@ $too-wide:em(1200) !default;
 }
 
 %lightcaps {
-    text-transform:uppercase;
+    @extend %capitalized;
     font-size:0.86em;
     font-weight:inherit;
 }
 
 %smallcaps {
     @extend %lightcaps;
+    font-weight:bold;
+}
+
+%bold {
     font-weight:bold;
 }
 
@@ -77,6 +85,27 @@ $too-wide:em(1200) !default;
 
 %vulnerable {
     margin:0;
+}
+
+@mixin square() {
+    padding-bottom:100%;
+    position:relative;
+}
+
+%square { /* http://codepen.io/thetallweeks/pen/tAdmL?editors=110 */
+    @include square;
+}
+
+@mixin absolute-corners() {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+%absolute-corners {
+    @include absolute-corners;
 }
 
 @mixin dropzone($bg:rgb(230,230,230), $minHeight:6em, $borderRadius:1.4em, $border:0.2em dashed darken(rgb(230,230,230),12%)) {
@@ -97,26 +126,7 @@ $too-wide:em(1200) !default;
     font-size:$fontSize;
 }
 
-/*
-http://stackoverflow.com/a/17181946
-*/
-@mixin placeholder {
-  @include optional-at-root('::-webkit-input-placeholder') {
-    @content;
-  }
 
-  @include optional-at-root(':-moz-placeholder') {
-    @content;
-  }
-
-  @include optional-at-root('::-moz-placeholder') {
-    @content;
-  }
-
-  @include optional-at-root(':-ms-input-placeholder') {
-    @content;
-  }
-}
 
 /*
 http://www.phase2technology.com/blog/exploring-maps-in-sass-3-3/
