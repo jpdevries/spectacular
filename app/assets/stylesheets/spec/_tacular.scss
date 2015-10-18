@@ -48,6 +48,10 @@ $too-wide:em(1200) !default;
     width:100%;
 }
 
+%max-width-none {
+    max-width:none;
+}
+
 %code {
     font-family: monospace, serif;
 }
