@@ -1,19 +1,19 @@
-$desktop: max-width 990px 12 !default;
-$cinema: max-width 1400px 12 !default;
-$iphoneP: max-width 480px 4 !default;
-$mobile: max-width 640px 4 !default;
-$tabletP: max-width 768px 12 !default;
-$tabletL: max-width 1024px 12 !default;
+$desktop: max-width 61.875em 12 !default;
+$cinema: max-width 87.5em 12 !default;
+$iphoneP: max-width 30em 4 !default;
+$mobile: max-width 40em 4 !default;
+$tabletP: max-width 48em 12 !default;
+$tabletL: max-width 64px 12 !default;
 
-$gtDesktop: min-width 991px 12 !default;
-$gtCinema: min-width 1401px 12 !default;
-$gtiphoneP: min-width 481px 4 !default;
-$gtMobile: min-width 641px 12 !default;
-$gtTabletP: min-width 769px 12 !default;
-$gtTabletL: min-width 1025px 12 !default;
+$gtDesktop: min-width 61.9375em 12 !default;
+$gtCinema: min-width 87.5625em 12 !default;
+$gtiphoneP: min-width 30.0625em 4 !default;
+$gtMobile: min-width 40.0625em 12 !default;
+$gtTabletP: min-width 48.0625em 12 !default;
+$gtTabletL: min-width 64.0625em 12 !default;
 
-$tabletPH: max-height 768px 4 !default;
-$gtTabletPH: min-height 769px 4 !default;
+$tabletPH: max-height 48em 4 !default;
+$gtTabletPH: min-height 48.0625em 4 !default;
 
 @mixin luminosity($brightness:normal) {
     @media screen and (luminosity:$brightness) {
