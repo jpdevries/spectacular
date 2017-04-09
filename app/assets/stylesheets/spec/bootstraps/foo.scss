@@ -1,0 +1,34 @@
+[hidden="visually"] {
+  display: block;
+  @extend %visually-hidden;
+}
+
+.very {
+  &.greedy {
+    @extend %very-greedy;
+  }
+}
+
+.captalized {
+  @extend %capitalized;
+}
+
+.vulnerable {
+  @extend %vulnerable;
+}
+
+.clickable {
+  @extend %clickable;
+}
+
+.contained, .shrinkable {
+  @extend %contained;
+}
+
+.dropzone {
+  @extend %dropzone;
+}
+
+.clearfix {
+  @extend %clearfix;
+}

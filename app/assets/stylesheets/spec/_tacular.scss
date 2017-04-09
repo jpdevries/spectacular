@@ -15,53 +15,50 @@ $gtTabletL: min-width 64.0625em 12 !default;
 $tabletPH: max-height 48em 4 !default;
 $gtTabletPH: min-height 48.0625em 4 !default;
 
-@mixin luminosity($brightness:normal) {
-    @media screen and (luminosity:$brightness) {
+@mixin luminosity($brightness: normal) {
+    @media screen and (luminosity: $brightness) {
         @content;
     }
 }
 
-@mixin luminosity-js($brightness:"normal") {
-
-    @if $brightness == "dim" {
-        body[data-luminosity="dim"] { /* luminosity-js */
-            @content;
-        }
+@mixin cursor($cursor: course) {
+    @media screen and (cursor: $cursor) {
+        @content;
     }
 }
 
-$topMost:99999 !default;
-$too-wide:em(1200) !default;
+$topMost: 99999 !default;
+$too-wide: 74em !default;
 
 %greedy {
-    width:100%;
+    width: 100%;
     @include media($too-wide) {
-        width:auto;
+        width: auto;
     }
 }
 
 %capitalized {
-    text-transform:uppercase;
+    text-transform: uppercase;
 }
 
 %display-block {
-  display:block;
+  display: block;
 }
 
 %display-inline {
-  display:inline;
+  display: inline;
 }
 
 %display-inline-block {
-  display:inline-block;
+  display: inline-block;
 }
 
 %very-greedy {
-    width:100%;
+    width: 100%;
 }
 
 %max-width-none {
-    max-width:none;
+    max-width: none;
 }
 
 %code {
@@ -69,43 +66,43 @@ $too-wide:em(1200) !default;
 }
 
 %clickable {
-    cursor:pointer;
+    cursor: pointer;
 }
 
 %lightcaps {
     @extend %capitalized;
-    font-size:0.86em;
-    font-weight:inherit;
+    font-size: 0.86em;
+    font-weight: inherit;
 }
 
 %smallcaps {
     @extend %lightcaps;
-    font-weight:bold;
+    font-weight: bold;
 }
 
 %bold {
-    font-weight:bold;
+    font-weight: bold;
 }
 
 %unaligned {
-    text-align:center;
+    text-align: center;
 }
 
 %shrinkable {
-    max-width:100%;
+    max-width: 100%;
 }
 
 %contained {
-    max-width:100%;
+    max-width: 100%;
 }
 
 %vulnerable {
-    margin:0;
+    margin: 0;
 }
 
 @mixin square() {
-    padding-bottom:100%;
-    position:relative;
+    padding-bottom: 100%;
+    position: relative;
 }
 
 %square { /* http://codepen.io/thetallweeks/pen/tAdmL?editors=110 */
@@ -113,35 +110,38 @@ $too-wide:em(1200) !default;
 }
 
 @mixin absolute-corners() {
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 %absolute-corners {
     @include absolute-corners;
 }
 
-@mixin dropzone($bg:rgb(230,230,230), $minHeight:6em, $borderRadius:1.4em, $border:0.2em dashed darken(rgb(230,230,230),12%)) {
-    background:$bg;
-    min-height:$minHeight;
-    border-radius:$borderRadius;
-    border:$border;
+@mixin dropzone($bg: rgb(230,230,230), $minHeight: 6em, $borderRadius: 1.4em, $border: 0.2em dashed darken(rgb(230,230,230),12%)) {
+    background: $bg;
+    min-height: $minHeight;
+    border-radius: $borderRadius;
+    border: $border;
 }
 
-@mixin emphatic-link($fontSize:0.82em) {
+@mixin emphatic-link($fontSize: 0.82em) {
     @extend %smallcaps;
-    font-size:$fontSize;
+    font-size: $fontSize;
 }
 
-@mixin tip($fontSize:0.678em) {
+@mixin tip($fontSize: 0.678em) {
     @extend %clickable;
     @extend %smallcaps;
-    font-size:$fontSize;
+    font-size: $fontSize;
 }
 
+@mixin highlighted() {
+  background: 
+}
 
 
 /*
@@ -163,10 +163,10 @@ http://www.phase2technology.com/blog/exploring-maps-in-sass-3-3/
 }
 
 @mixin scrollable($props:(
-  maxHeight:8em,
-  overflowY:auto,
-  maxWidth:100%,
-  overflowX:auto
+  maxHeight: 8em,
+  overflowY: auto,
+  maxWidth: 100%,
+  overflowX: auto
 )) {
     $maxHeight:map-get($props,maxHeight);
     $overflowY:map-get($props,overflowY);
@@ -174,11 +174,11 @@ http://www.phase2technology.com/blog/exploring-maps-in-sass-3-3/
     $overflowX:map-get($props,overflowX);
 
     @include media($gtMobile) {
-        @if $maxHeight != null { max-height:$maxHeight; }
-        @if $overflowY != null { overflow-y:$overflowY; }
+        @if $maxHeight != null { max-height: $maxHeight; }
+        @if $overflowY != null { overflow-y: $overflowY; }
 
-        @if $maxWidth != null { max-width:maxWidth; }
-        @if $overflowX != null { overflow-x:overflowX; }
+        @if $maxWidth != null { max-width: maxWidth; }
+        @if $overflowX != null { overflow-x: overflowX; }
     }
 }
 
@@ -187,25 +187,24 @@ http://www.phase2technology.com/blog/exploring-maps-in-sass-3-3/
         *border-collapse: collapse; /* IE7 and lower */
         border-collapse: separate !important;
         border-spacing: 0;
-        border-radius:$borderRadius;
+        border-radius: $borderRadius;
     }
 }
 
-@mixin pretty-table($props:(
-      tablePadding:0 0.2em 0.2em 0.2em,
-      gutter:1em,
-      paddingTop:1em,
-      paddingBottom:0.6em,
-      border:1px solid darken(rgb(240,240,240),12%),
-      borderRadius:0.5em,
-      trOdd:null,
+@mixin pretty-table($props: (
+      tablePadding: 0 0.2em 0.2em 0.2em,
+      gutter: 1em,
+      paddingTop: 1em,
+      paddingBottom: 0.6em,
+      border: 1px solid darken(rgb(240, 240, 240), 12%),
+      borderRadius: 0.5em,
+      trOdd: null,
       trEven:(
-        background:rgb(240,240,240),
-        border-top:1px solid darken(rgb(240,240,240),12%),
-        border-bottom:1px solid darken(rgb(240,240,240),12%)
+        background:rgb(240, 240, 240),
+        border-top:1px solid darken(rgb(240, 240 ,240), 12%),
+        border-bottom:1px solid darken(rgb(240, 240, 240), 12%)
       )
     )) {
-
     $tablePadding:map-get($props,tablePadding);
     $gutter:map-get($props,gutter);
     $paddingTop:map-get($props,paddingTop);
@@ -266,7 +265,7 @@ http://www.phase2technology.com/blog/exploring-maps-in-sass-3-3/
     @include tip();
 }
 
-@mixin accessibly-hidden() { // http://a11yproject.com/posts/how-to-hide-content
+@mixin visually-hidden() { // http://a11yproject.com/posts/how-to-hide-content
   position: absolute !important;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
@@ -278,8 +277,8 @@ http://www.phase2technology.com/blog/exploring-maps-in-sass-3-3/
   white-space: no-wrap; // https://github.com/h5bp/html5-boilerplate/issues/1874
 }
 
-%accessibly-hidden {
-    @include accessibly-hidden;
+%visually-hidden {
+    @include visually-hidden;
 }
 
 // Clearfix: contain floats
