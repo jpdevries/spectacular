@@ -1,0 +1,326 @@
+@import "spec/tacular";
+
+@import "spec/global/vars";
+
+
+@import "spec/bootstraps/aria";
+@import "spec/bootstraps/base";
+@import "spec/bootstraps/contrast";
+@import "spec/bootstraps/effects";
+
+@import "spec/bootstraps/heading";
+@import "spec/bootstraps/layout";
+@import "spec/bootstraps/module";
+
+@import "spec/bootstraps/foo";
+
+@import "spec/bootstraps/typography";
+@import "spec/bootstraps/visibility";
+
+* {
+  &:target {
+    color: var(--target-color, inherit);
+    text-decoration: var(--target-text-decoration, inherit);
+    border: var(--target-border, inherit);
+    box-shadow: var(--target-box-shadow, inherit);
+  }
+}
+
+%operator-screensmart {
+  font-family: "Operator SSm A", "Operator SSm B";
+}
+
+%operator-screensmart-medium {
+  @extend %operator-screensmart;
+  font-style: normal;
+  font-weight: 500;
+}
+
+%operator-screensmart-medium-italic {
+  @extend %operator-screensmart-medium;
+  font-style: italic;
+}
+
+.operator-screensmart-medium-italic {
+  @extend %operator-screensmart-medium-italic;
+}
+
+%operator-screensmart-book {
+  font-family: "Operator SSm A", "Operator SSm B";
+  font-style: normal;
+  font-weight: 400;
+}
+
+%operator-screensmart-mono-book {
+  font-family: "Operator Mono SSm A", "Operator Mono SSm B";
+  font-style: normal;
+  font-weight: 400;
+}
+
+.operator-screensmart-book {
+  @extend %operator-screensmart-book;
+}
+
+%operator-screensmart-bold {
+  @extend %operator-screensmart;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.operator-screensmart-bold {
+  @extend %operator-screensmart-bold;
+}
+
+%operator-screensmart-medium-italic {
+  @extend %operator-screensmart;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.operator-screensmart-medium-italic {
+  @extend %operator-screensmart-medium-italic;
+}
+
+%operator-screensmart-black {
+  @extend %operator-screensmart;
+  font-style: normal;
+  font-weight: 800;
+}
+
+%operator-screensmart-black-italic {
+  @extend %operator-screensmart-black;
+  font-style: italic;
+}
+
+div.foo {
+  @extend %alphabetical-grid-areas;
+}
+
+code, pre {
+  @extend %operator-screensmart-mono-book;
+}
+
+/*
+body {
+  @include high-contrast() {
+    background: black;
+  }
+}
+*/
+
+body {
+  @extend %operator-screensmart-book;
+}
+
+section, footer, header {
+  &:not([role="banner"]):not([role="contentinfo"]):not(.greedy) {
+    @extend %module;
+
+    --module-margin: 0 auto;
+    --module-border: none;
+  }
+}
+
+#silent, #lightweight {
+  background: #f2efbf;
+  color: darken(#f2efbf, 68%);
+}
+
+pre {
+  text-align: left;
+  margin: 0 auto;
+}
+
+footer[role="contentinfo"] {
+  text-align: center;
+
+  background: #adeae9;
+  color: #025b84;
+  --border-color: darken(#adeae9, 12%);
+  p {
+    max-width: 64ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+body > section {
+  border-bottom: 1px solid var(--border-color, currentColor);
+  text-align: center;
+
+  div {
+    max-width: 74ch;
+  }
+
+  header {
+
+    em {
+      @include each-heading() {
+        @extend %operator-screensmart-black-italic;
+      }
+    }
+  }
+  > div {
+    margin-left: auto;
+    margin-right: auto;
+    pre {
+      //font-size: larger;
+      background: rgba(white, 0.36);
+      border: 1px solid rgba(darken(#f2efbf, 68%), 0.24);
+      border-radius: .5em;
+      padding: 1em;
+    }
+  }
+}
+
+section {
+  header {
+    max-width: 64ch;
+    --module-margin: 0 auto;
+  }
+  p {
+    &:first-child, &:last-child {
+      //margin-top: 0;
+      //margin-bottom: 0;
+    }
+  }
+}
+
+body > nav {
+  margin-top: 1rem;
+}
+
+input {
+  font-size: 1em;
+}
+
+a {
+  --target-color :orange;
+}
+
+aside {
+  &[role="search"] {
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    form > div {
+      flex: 1 0 auto;
+      input {
+        @extend %greedy;
+      }
+    }
+
+    button[type="submit"] {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    padding: var(--module-padding, 1rem);
+
+    background: rgb(8, 8, 8);
+    color: white;
+
+    --heading-font-weight: normal;
+    --heading-font: inherit;
+  }
+}
+
+body > header[role="banner"] {
+  margin-bottom: 0;
+}
+
+section, header {
+
+  &[role="banner"] {
+    @extend %balanced;
+    //background: rgb(8, 8, 8);
+
+    color: white;
+    padding: 2rem 0;
+    h1 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+#cover {
+  background: #adeae9;
+  color: #025b84;
+  //border-bottom: 1px solid darken(#adeae9, 12%);
+  --border-color: darken(#adeae9, 12%);
+  --margin: 0 auto;
+
+  p {
+    font-size: larger;
+  }
+
+  h1 {
+    span {
+      text-shadow: 3px 3px 0px white;
+    }
+  }
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#bootstraps {
+  background: #cdf2d1;
+  color: darken(#cdf2d1, 68%);
+}
+
+#themable {
+  background: #e9c0ed;
+  color: darken(#e9c0ed, 56%);
+}
+
+#accessible {
+  background: #cdd0f5;
+  color: darken(#cdd0f5, 56%);
+}
+
+nav[role="navigation"] {
+  a {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+label {
+  @extend %block;
+}
+
+form {
+  &[action*="signup"] {
+    input {
+      @extend %greedy;
+    }
+    label[for="email"] {
+      margin-top: 1rem;
+    }
+    button[type="submit"] {
+      margin-top: 1rem;
+    }
+  }
+}
+
+button {
+  &[type="submit"] {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+
+body > nav {
+  text-align: center;
+}
+
+section.greedy {
+  min-height: 100vh;
+}

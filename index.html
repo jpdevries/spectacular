@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="assets/css/spectacular-1.0.0.css">
+
+<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6068232/7856572/css/fonts.css" />
+
+    <style media="screen">
+      body {
+        --body-background: rgb(240, 240, 240);
+        --body-color: rgb(8, 8, 8);
+        --body-font-family: -apple-system,
+         BlinkMacSystemFont,
+         "Segoe UI",
+         Roboto,
+         Oxygen,
+         Ubuntu,
+         Cantarell,
+         "Open Sans",
+         "Helvetica Neue",
+         sans-serif;
+         --body-padding: 0;
+
+         --vulnerable-module-margin-left: 0;
+         --vulnerable-module-margin-right: 0;
+
+        --module-padding: white;
+        --module-padding: 1rem;
+        --module-margin: 1rem 1rem;
+        --module-border-color: rgb(220, 220, 220);
+
+        --very-legible-font-size: 200%;
+
+        --heading-font: inherit;
+        --heading-font-family: inherit;
+        --heading-font-weight: bold;
+
+        --alert-color: blue;
+        --dialog-font-weight: bold;
+        --link-text-decoration: underline;
+        --list-list-stype-type: disc;
+        --list-list-stype-type: square;
+
+        --contentinfo-padding: .5rem;
+
+        --hr-border: none;
+        --hr-border-top: 1px solid rgb(180, 180, 180);
+
+        /* footer styles */
+        --darkmodule-background: red;
+        --contentinfo-background: rgb(8, 8, 8);
+
+        --dialog-border:1px solid rgb(180, 180, 180);
+        --dialog-border-radius: 1rem;
+        --dialog-text-align: right;
+
+        --anchor-presentation-color: gray;
+        --anchor-presentation-hover-color: rebeccapurple;
+      }
+    </style>
+  </head>
+  <body class="layout">
+    <section id="cover" role="banner" class="cover layout">
+      <h1 class="extremely legible typography">
+        🎉<br>
+        <span>spec<i>tacular</i></span>
+      </h1>
+      <p><i>Make your Sass&nbsp;spectacular<br /><small>or&nbsp;not</small></i></p>
+      <a href="#">Let’s Go</a>
+    </section>
+    <aside hidden role="search" class="persistent layout">
+      <form class="flexible unbiased legible typography layout" action="index.html" method="post">
+        <h2 class=""><label for="search">Search</label></h2>
+        <div class="flexible unbiased layout">
+          <input type="text" name="search" id="search" value="" placeholder="HTML5">
+          <button type="submit">Go</button>
+        </div>
+
+      </form>
+    </aside>
+
+    <section id="silent" class="greedy">
+      <header>
+        <h2>
+          😶<br />
+          <em>silent</em>
+        </h2>
+        <div>
+          <p>spec<i>tacular</i> bites its tongue and refrains from adding unneccesary bloat to your CSS&nbsp;footprint.</p>
+        </div>
+      </header>
+      <div>
+        <p>For example, the below code efficiently adds only the module code to your CSS&nbsp;output.</p>
+      </div>
+      <div>
+        <pre>
+@import "spec/tacular";
+
+.my-module {
+  @extend %module;
+  --background: lighten(rebeccapurple, 72%);
+  --color: rebeccapurple;
+  --padding: 1em 2em;
+}
+        </pre>
+      </div>
+    </section>
+
+    <section id="bootstraps" class="greedy">
+      <header>
+        <h2>
+          👢<br />
+          <em>bootstraps</em>
+        </h2>
+      </header>
+      <div>
+        <p>spec<i>tacular</i>, shy as it is, remains initially silent but it will speak up when you ask it to. Import one or more bootstraps to begin designing without having to write any styling&nbsp;code.</p>
+        <pre>
+@import "spec/tacular";
+
+@import "spec/bootstraps/aria";
+@import "spec/bootstraps/base";
+@import "spec/bootstraps/contrast";
+@import "spec/bootstraps/effects";
+@import "spec/bootstraps/heading";
+@import "spec/bootstraps/layout";
+@import "spec/bootstraps/module";
+@import "spec/bootstraps/typography";
+@import "spec/bootstraps/visibility";
+        </pre>
+      </div>
+    </section>
+
+    <section id="themable" class="greedy">
+      <header>
+        <h2>
+          💅<br />
+          themable
+        </h2>
+        <div>
+          <p>
+            spec<i>tacular</i> allows you to theme pages with CSS Properties, making your styles fully&nbsp;themable.
+          </p>
+        </div>
+      </header>
+      <div>
+        <pre>
+@import "spec/tacular";
+
+/* bootstrap your layouts */
+@import "spec/bootstraps/layout";
+
+.layout {
+  &.thin {
+    --max-width: 42ch; // customize thin width
+  }
+}
+        </pre>
+      </div>
+    </section>
+
+    <section id="accessible" class="greedy">
+      <header>
+        <h2>
+          ♿️<br />
+          <em>accessible</em>
+        </h2>
+        <p>Accessibility is water.<br />We are all in need and deserving of&nbsp;it.</p>
+      </header>
+      <div>
+        <p>
+          With helpers for things like <code>reduce-motion</code> and <code>ms-high-contrast</code> media queries, spec<i>tacular</i> makes it easy for you to bake accessibility into your styles.
+        </p>
+      </div>
+<div>
+  <pre>
+@import "spec/tacular";
+
+* {
+  @include reduced-motion() {
+    transition-duration: 0 !important;
+  }
+}
+
+.my-component {
+  @include high-contrast(white-on-black) {
+    --black: rgb(8, 8, 8); /* almost solid black */
+    --white: rgb(253, 253, 253); /* almost pure white */
+
+    --background: --black;
+    --color: --white;
+  }
+}
+  </pre>
+</div>
+    </section>
+
+    <section id="lightweight" class="greedy">
+      <header>
+        <h2>
+          🐣<br />
+          <em>lightweight</em>
+        </h2>
+        <div>
+          <p>spec<i>tacular</i> groups selectors together to keep your CSS files compact.</p>
+        </div>
+      </header>
+
+      <div>
+        <pre>
+@import "spec/tacular";
+
+@include each-heading(h1, h2, h3) {
+  @extend %capitalized;
+}
+
+.capitalized {
+  @extend %capitalized;
+}
+
+/* will output:
+h1, h2, h3, .capitalized {
+  text-transform: uppercase;
+}
+*/
+        </pre>
+      </div>
+    </section>
+
+    <footer role="contentinfo" style="text-align: center">
+      <header>
+        <h2>
+          🙌<br />
+          <em>thank you</em>
+        </h2>
+        <p>
+          Thanks for checking out spec<i>tacular</i>. This project is a work in progress and being rapidly developed, so give us a follow and remember if you like it then you shoulda <a href="https://github.com/jpdevries/spectacular" target="_spectacular-github">put&nbsp;a&nbsp;star&nbsp;on&nbsp;it</a>.
+        </p>
+      </header>
+
+    </footer>
+  </body>
+</html>

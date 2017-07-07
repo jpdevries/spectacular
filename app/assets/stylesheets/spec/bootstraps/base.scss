@@ -1,0 +1,14 @@
+body {
+  background: var(--body-background, inherit);
+  font: var(--body-font, inherit);
+  font-family: var(--body-font-family, inherit);
+  color: var(--body-color, inherit);
+}
+
+hr {
+  border: var(--hr-border, auto);
+  border-top: var(--hr-border-top, auto);
+  border-right: var(--hr-border-right, auto);
+  border-bottom: var(--hr-border-bottom, auto);
+  border-left: var(--hr-border-left, auto);
+}

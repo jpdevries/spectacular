@@ -1,0 +1,615 @@
+.layout.cover, aside[role="search"] form > div input, form[action*="signup"] input {
+  width: var(--greedy, 100%);
+}
+
+.typography .captalized {
+  text-transform: uppercase;
+}
+
+.layout.very.greedy {
+  width: var(--very-greedy, 100%);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+section[role="banner"], header[role="banner"] {
+  text-align: center;
+}
+
+.inverted {
+  filter: invert(100%);
+}
+
+.grayscale, .greyscale {
+  filter: grayscale(100%);
+}
+
+.layout img:not(.uncontained), .layout.contained, .layout .shrinkable {
+  max-width: var(--contained-max-width, 100%);
+}
+
+.layout.vulnerable {
+  margin: var(--vulerable-margin, 0);
+}
+
+.layout.flexible.unbiased > * {
+  flex: var(--flexibly-equal-children, 1 0 auto);
+}
+
+.layout.grid {
+  display: grid;
+}
+
+/*
+http://www.phase2technology.com/blog/exploring-maps-in-sass-3-3/
+*/
+.dropzone {
+  background: var(--dropzone-bg, #e6e6e6);
+  min-height: var(--dropzone-min-height, 6em);
+  border-radius: var(--dropzone-border-radius, 1.4em);
+  border: var(--dropzone-border-color, 0.2em dashed var(--border-color, #c7c7c7));
+}
+
+[hidden="visually"] {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+body:hover [hidden="visually"] a, body:hover [hidden="visually"] input, body:hover [hidden="visually"] button {
+  display: none !important;
+}
+
+.layout.clearfix .lt-ie8 {
+  *zoom: 1;
+}
+.layout.clearfix:before, .layout.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.layout.clearfix:after {
+  clear: both;
+}
+
+[role="alert"] {
+  color: var(--alert-color, red);
+}
+
+[role="button"] {
+  color: red;
+}
+
+.layout.flexible {
+  display: flex;
+}
+
+label {
+  display: block;
+}
+
+.btn.btn-bold {
+  position: relative;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.module, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy), footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy), header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) {
+  background: var(--module-background, var(--background, transparent));
+  padding: var(--module-padding, var(--padding, 1rem));
+  margin: var(--module-margin, 1rem auto);
+  border: var(--module-border, 1px solid gainsboro);
+  border-color: var(--module-border-color, var(--border-color, currentColor));
+  border-radius: var(--module-border-radius, 0.5rem);
+  color: var(--module-color, var(--color, inherit));
+}
+.module > h1:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > h1:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > h1:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > h1:first-child, .module h2:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h2:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h2:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h2:first-child, .module h3:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h3:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h3:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h3:first-child, .module h4:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h4:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h4:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h4:first-child, .module h5:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h5:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h5:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h5:first-child, .module h6:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h6:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h6:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h6:first-child, .module p:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) p:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) p:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) p:first-child {
+  margin-top: var(--first-child-margin-top, 0);
+}
+
+a[role="presentation"] {
+  color: var(--anchor-presentation-color, currentColor);
+  text-decoration: var(--anchor-presentation-text-decoration, none);
+}
+a[role="presentation"]:hover {
+  color: var(--anchor-presentation-hover-color, currentColor);
+  text-decoration: var(--anchor-presentation-hover-text-decoration, none);
+}
+
+[role="contentinfo"] {
+  background: var(--contentinfo-background, var(--darkmodule-background, black));
+  color: var(--contentinfo-color, white);
+  padding: var(--contentinfo-padding, var(--module-padding, 1em));
+}
+
+[role="dialog"] {
+  padding: var(--dialog-padding, var(--module-padding, 1em));
+  background: var(--dialog-background, gainsboro);
+  color: var(--dialog-color, #5a5a5a);
+  border: var(--dialog-border, 1px solid #5a5a5a);
+  border-radius: var(--dialog-border-radius, 0.5em);
+  text-align: var(--dialog-text-align, left);
+}
+
+[role="heading"] {
+  font-family: var(--heading-font-family, inherit);
+  font-weight: var(--heading-font-weight, bold);
+}
+
+h1 {
+  font-family: var(--h1-font-family, var(--heading-font-family, inherit));
+  font-weight: var(--h1-font-weight, var(--heading-font-weight, bold));
+}
+
+h2 {
+  font-family: var(--h2-font-family, var(--heading-font-family, inherit));
+  font-weight: var(--h2-font-weight, var(--heading-font-weight, bold));
+}
+
+h3 {
+  font-family: var(--h3-font-family, var(--heading-font-family, inherit));
+  font-weight: var(--h3-font-weight, var(--heading-font-weight, bold));
+}
+
+h4 {
+  font-family: var(--h4-font-family, var(--heading-font-family, inherit));
+  font-weight: var(--h4-font-weight, var(--heading-font-weight, bold));
+}
+
+h5 {
+  font-family: var(--h5-font-family, var(--heading-font-family, inherit));
+  font-weight: var(--h5-font-weight, var(--heading-font-weight, bold));
+}
+
+h6 {
+  font-family: var(--h6-font-family, var(--heading-font-family, inherit));
+  font-weight: var(--h6-font-weight, var(--heading-font-weight, bold));
+}
+
+[role="link"] {
+  text-decoration: var(--link-text-decoration, underlined);
+}
+
+[role="list"] {
+  list-style-type: var(--list-list-stype-type, disc);
+}
+
+[role="banner"] {
+  margin: var(--banner-margin, var(--vulnerable-module-margin, var(--margin, 1rem)));
+  /*
+  margin-right: var(
+    --banner-margin-right,
+    var(--vulnerable-module-margin-right, auto)
+  );
+  margin-bottom: var(
+    --banner-margin-bottom,
+    var(--vulnerable-module-margin-bottom, 1rem)
+  );
+  margin-left: var(
+    --banner-margin-left,
+    var(--vulnerable-module-margin-left, auto)
+  );
+  */
+}
+[role="banner"]:first-child {
+  margin-top: 0;
+}
+
+body {
+  background: var(--body-background, inherit);
+  font: var(--body-font, inherit);
+  font-family: var(--body-font-family, inherit);
+  color: var(--body-color, inherit);
+}
+
+hr {
+  border: var(--hr-border, auto);
+  border-top: var(--hr-border-top, auto);
+  border-right: var(--hr-border-right, auto);
+  border-bottom: var(--hr-border-bottom, auto);
+  border-left: var(--hr-border-left, auto);
+}
+
+h1, h2, h3, h4, h6, h6 {
+  color: var(--heading-color, initial);
+  font-weight: var(--heading-font-weight);
+}
+
+h1 {
+  color: var(--h1-color, inherit);
+  font-weight: var(--h1-font-weight, bold);
+  text-decoration: var(--h1-text-decoration, inherit);
+}
+h1:first-child {
+  margin-top: var(--h1-margin-top, 0);
+}
+
+h2 {
+  color: var(--h2-color, inherit);
+  font-weight: var(--h2-font-weight, bold);
+  text-decoration: var(--h2-text-decoration, inherit);
+}
+h2:first-child {
+  margin-top: var(--h2-margin-top, 0);
+}
+
+h3 {
+  color: var(--h3-color, inherit);
+  font-weight: var(--h3-font-weight, bold);
+  text-decoration: var(--h3-text-decoration, inherit);
+}
+h3:first-child {
+  margin-top: var(--h3-margin-top, 0);
+}
+
+h4 {
+  color: var(--h4-color, inherit);
+  font-weight: var(--h4-font-weight, bold);
+  text-decoration: var(--h4-text-decoration, inherit);
+}
+h4:first-child {
+  margin-top: var(--h4-margin-top, 0);
+}
+
+h5 {
+  color: var(--h5-color, inherit);
+  font-weight: var(--h5-font-weight, bold);
+  text-decoration: var(--h5-text-decoration, inherit);
+}
+h5:first-child {
+  margin-top: var(--h5-margin-top, 0);
+}
+
+h6 {
+  color: var(--h6-color, inherit);
+  font-weight: var(--h6-font-weight, bold);
+  text-decoration: var(--h6-text-decoration, inherit);
+}
+h6:first-child {
+  margin-top: var(--h6-margin-top, 0);
+}
+
+div.foo .grid-area-a {
+  grid-area: a;
+}
+div.foo .grid-area-b {
+  grid-area: b;
+}
+div.foo .grid-area-c {
+  grid-area: c;
+}
+div.foo .grid-area-d {
+  grid-area: d;
+}
+div.foo .grid-area-e {
+  grid-area: e;
+}
+div.foo .grid-area-f {
+  grid-area: f;
+}
+div.foo .grid-area-g {
+  grid-area: g;
+}
+div.foo .grid-area-h {
+  grid-area: h;
+}
+div.foo .grid-area-i {
+  grid-area: i;
+}
+div.foo .grid-area-j {
+  grid-area: j;
+}
+div.foo .grid-area-k {
+  grid-area: k;
+}
+div.foo .grid-area-l {
+  grid-area: l;
+}
+div.foo .grid-area-m {
+  grid-area: m;
+}
+div.foo .grid-area-n {
+  grid-area: n;
+}
+div.foo .grid-area-o {
+  grid-area: o;
+}
+div.foo .grid-area-p {
+  grid-area: p;
+}
+div.foo .grid-area-q {
+  grid-area: q;
+}
+div.foo .grid-area-r {
+  grid-area: r;
+}
+div.foo .grid-area-s {
+  grid-area: s;
+}
+div.foo .grid-area-t {
+  grid-area: t;
+}
+div.foo .grid-area-u {
+  grid-area: u;
+}
+div.foo .grid-area-v {
+  grid-area: v;
+}
+div.foo .grid-area-w {
+  grid-area: w;
+}
+div.foo .grid-area-x {
+  grid-area: x;
+}
+div.foo .grid-area-y {
+  grid-area: y;
+}
+div.foo .grid-area-z {
+  grid-area: z;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.layout {
+  margin: var(--margin, 0);
+}
+
+.layout.persistent {
+  position: sticky;
+  top: 0;
+}
+.layout.flexible.unbiased > * {
+  margin-right: var(--flexible-unbiased-item-margin-right, 1rem);
+}
+.layout.flexible.unbiased > *:last-child {
+  margin-right: var(--flexible-unbiased-last-item-margin-right, 0);
+}
+.layout.cover {
+  min-height: var(--cover-min-height, 100vh);
+}
+.layout.balanced {
+  margin-left: auto;
+  margin-right: auto;
+  --module-margin-left: auto;
+  --module-margin-right: auto;
+}
+.layout.thin {
+  max-width: var(--layout-thin-max-width, var(--max-width, 18em));
+}
+
+.typography.legible {
+  font-size: var(--legible-font-size, 120%);
+}
+.typography.very.legible {
+  font-size: var(--very-legible-font-size, 200%);
+}
+.typography.extremely.legible {
+  font-size: var(--extremely-legible-font-size, 400%);
+}
+.typography.balanced {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+*:target {
+  color: var(--target-color, inherit);
+  text-decoration: var(--target-text-decoration, inherit);
+  border: var(--target-border, inherit);
+  box-shadow: var(--target-box-shadow, inherit);
+}
+
+.operator-screensmart-medium-italic, .operator-screensmart-bold, body > section header em h1, body > section header em h2, body > section header em h3, body > section header em h4, body > section header em h5, body > section header em h6 {
+  font-family: "Operator SSm A", "Operator SSm B";
+}
+
+.operator-screensmart-medium-italic {
+  font-style: normal;
+  font-weight: 500;
+}
+
+.operator-screensmart-medium-italic {
+  font-style: italic;
+}
+
+.operator-screensmart-book, body {
+  font-family: "Operator SSm A", "Operator SSm B";
+  font-style: normal;
+  font-weight: 400;
+}
+
+code, pre {
+  font-family: "Operator Mono SSm A", "Operator Mono SSm B";
+  font-style: normal;
+  font-weight: 400;
+}
+
+.operator-screensmart-bold {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.operator-screensmart-medium-italic {
+  font-style: italic;
+  font-weight: 500;
+}
+
+body > section header em h1, body > section header em h2, body > section header em h3, body > section header em h4, body > section header em h5, body > section header em h6 {
+  font-style: normal;
+  font-weight: 800;
+}
+
+body > section header em h1, body > section header em h2, body > section header em h3, body > section header em h4, body > section header em h5, body > section header em h6 {
+  font-style: italic;
+}
+
+/*
+body {
+  @include high-contrast() {
+    background: black;
+  }
+}
+*/
+section:not([role="banner"]):not([role="contentinfo"]):not(.greedy), footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy), header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) {
+  --module-margin: 0 auto;
+  --module-border: none;
+}
+
+#silent, #lightweight {
+  background: #f2efbf;
+  color: #48440f;
+}
+
+pre {
+  text-align: left;
+  margin: 0 auto;
+}
+
+footer[role="contentinfo"] {
+  text-align: center;
+  background: #adeae9;
+  color: #025b84;
+  --border-color: #7cdedc;
+}
+footer[role="contentinfo"] p {
+  max-width: 64ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body > section {
+  border-bottom: 1px solid var(--border-color, currentColor);
+  text-align: center;
+}
+body > section div {
+  max-width: 74ch;
+}
+body > section > div {
+  margin-left: auto;
+  margin-right: auto;
+}
+body > section > div pre {
+  background: rgba(255, 255, 255, 0.36);
+  border: 1px solid rgba(72, 68, 15, 0.24);
+  border-radius: .5em;
+  padding: 1em;
+}
+
+section header {
+  max-width: 64ch;
+  --module-margin: 0 auto;
+}
+
+body > nav {
+  margin-top: 1rem;
+}
+
+input {
+  font-size: 1em;
+}
+
+a {
+  --target-color: orange;
+}
+
+aside[role="search"] {
+  padding: var(--module-padding, 1rem);
+  background: #080808;
+  color: white;
+  --heading-font-weight: normal;
+  --heading-font: inherit;
+}
+aside[role="search"] h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+aside[role="search"] form > div {
+  flex: 1 0 auto;
+}
+aside[role="search"] button[type="submit"] {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+body > header[role="banner"] {
+  margin-bottom: 0;
+}
+
+section[role="banner"], header[role="banner"] {
+  color: white;
+  padding: 2rem 0;
+}
+section[role="banner"] h1, header[role="banner"] h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#cover {
+  background: #adeae9;
+  color: #025b84;
+  --border-color: #7cdedc;
+  --margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#cover p {
+  font-size: larger;
+}
+#cover h1 span {
+  text-shadow: 3px 3px 0px white;
+}
+
+#bootstraps {
+  background: #cdf2d1;
+  color: #15501b;
+}
+
+#themable {
+  background: #e9c0ed;
+  color: #682070;
+}
+
+#accessible {
+  background: #cdd0f5;
+  color: #1b2489;
+}
+
+nav[role="navigation"] a {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+form[action*="signup"] label[for="email"] {
+  margin-top: 1rem;
+}
+form[action*="signup"] button[type="submit"] {
+  margin-top: 1rem;
+}
+
+button[type="submit"] {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+body > nav {
+  text-align: center;
+}
+
+section.greedy {
+  min-height: 100vh;
+}
+
+/*# sourceMappingURL=spectacular-1.0.0.css.map */

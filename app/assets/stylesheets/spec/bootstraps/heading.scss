@@ -1,0 +1,18 @@
+h1, h2, h3,h4, h6, h6 {
+  color: var(--heading-color, initial);
+  font-weight: var(--heading-font-weight);
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+      color: var(--h#{$i}-color, inherit);
+      font-weight: var(--h#{$i}-font-weight, bold);
+      text-decoration: var(--h#{$i}-text-decoration, inherit);
+      &:first-child {
+        margin-top: var(--h#{$i}-margin-top, 0);
+        //margin-right: var(--h#{$i}-margin-right, inherit);
+        //margin-bottom: var(--h#{$i}-margin-bottom, inherit);
+        //margin-left: var(--h#{$i}-margin-left, inherit);
+      }
+    }
+}

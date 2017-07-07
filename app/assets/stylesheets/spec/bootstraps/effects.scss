@@ -1,0 +1,7 @@
+.inverted {
+  @extend %inverted;
+}
+
+.grayscale, .greyscale {
+  @extend %grayscale;
+}

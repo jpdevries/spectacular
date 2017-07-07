@@ -1,0 +1,80 @@
+@mixin alphabetical-grid-areas($areas: $alphabet) {
+  @each $area in $areas {
+    .grid-area-#{$area} {
+      grid-area: #{$area};
+    }
+  }
+}
+
+%alphabetical-grid-areas {
+  @include alphabetical-grid-areas;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.layout {
+  margin: var(--margin, 0);
+}
+
+.layout {
+
+  img:not(.uncontained) {
+    @extend %contained;
+  }
+  &.persistent {
+    position: sticky;
+    top:0;
+  }
+  &.grid {
+    @extend %grid;
+  }
+  &.flexible {
+    @extend %flex;
+    &.unbiased {
+      @extend %flexibly-equal-children;
+      > * {
+        margin-right: var(--flexible-unbiased-item-margin-right, 1rem);
+        &:last-child {
+          margin-right: var(--flexible-unbiased-last-item-margin-right, 0);
+        }
+      }
+    }
+  }
+
+  &.cover {
+    @extend %greedy;
+    min-height: var(--cover-min-height, 100vh);
+  }
+
+  &.balanced {
+    //@extend %balanced;
+    margin-left: auto;
+    margin-right: auto;
+    --module-margin-left: auto;
+    --module-margin-right: auto;
+  }
+
+  &.thin {
+    max-width: var(--layout-thin-max-width, var(--max-width, 18em));
+  }
+
+  &.very {
+    &.greedy {
+      @extend %very-greedy;
+    }
+    &.legible {
+
+    }
+  }
+  &.contained, .shrinkable {
+    @extend %contained;
+  }
+  &.clearfix {
+    @extend %clearfix;
+  }
+  &.vulnerable {
+    @extend %vulnerable;
+  }
+}

@@ -1,0 +1,26 @@
+$gt-desktop: (
+  columns: 12,
+  gutter: 1rem,
+  media: 61.9375em,
+) !default;
+
+$gt-cinema: (
+  columns: 12,
+  gutter: 1rem,
+  media: 87.5625em,
+) !default;
+
+$gt-tablet-portrait: (
+  columns: 12,
+  gutter: 1rem,
+  media: 48.0625em,
+) !default;
+
+$gt-tablet-landscape: (
+  columns: 12,
+  gutter: 1rem,
+  media: 64.0625em,
+) !default;
+
+$topMost: var(--topmost, 99999) !default;
+$too-wide: 74em !default;

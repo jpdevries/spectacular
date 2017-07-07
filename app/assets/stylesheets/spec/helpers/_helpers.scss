@@ -1,0 +1,209 @@
+@function rem($pixels, $context: $px-per-rem) {
+  @return #{$pixels/$context}rem;
+}
+
+%greedy {
+    width: var(--greedy, 100%);
+}
+
+%capitalized {
+    text-transform: uppercase;
+}
+
+%display-block {
+  display: block;
+}
+
+%display-inline {
+  display: inline;
+}
+
+%display-inline-block {
+  display: inline-block;
+}
+
+%very-greedy {
+    width: var(--very-greedy, 100%);
+}
+
+%max-width-none {
+    max-width: none;
+}
+
+%code {
+    font-family: monospace, serif;
+}
+
+%clickable {
+    cursor: pointer;
+}
+
+%lightcaps {
+    @extend %capitalized;
+    font-size: var(--lightcaps-font-size, 0.86em);
+    font-weight: inherit;
+}
+
+%smallcaps {
+    @extend %lightcaps;
+    font-weight: bold;
+}
+
+%bold {
+    font-weight: bold;
+}
+
+%unaligned {
+    text-align: center;
+}
+
+%balanced {
+  @extend %unaligned;
+}
+
+%inverted {
+  filter: invert(100%);
+}
+
+%grayscale {
+  filter: grayscale(100%);
+}
+
+%shrinkable {
+    max-width: var(--shrinkable-max-width, 100%);
+}
+
+%contained {
+    max-width: var(--contained-max-width, 100%);
+}
+
+%vulnerable {
+    margin: var(--vulerable-margin, 0);
+}
+
+%flexible {
+  display: flex;
+}
+
+%flexibly-equal-children {
+  > * {
+    flex: var(--flexibly-equal-children, 1 0 auto);
+  }
+}
+
+%grid {
+  display: grid;
+}
+
+@mixin square() {
+    padding-bottom: 100%;
+    position: relative;
+}
+
+%square { /* http://codepen.io/thetallweeks/pen/tAdmL?editors=110 */
+    @include square;
+}
+
+@mixin absolute-corners($top: 0, $left: 0, $right: 0, $bottom: 0, $position: absolute) {
+    position: $position;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+}
+
+%absolute-corners {
+    @include absolute-corners;
+}
+
+@mixin dropzone($bg: var(--dropzone-bg, rgb(230,230,230)), $minHeight: var(--dropzone-min-height, 6em), $borderRadius: var(--dropzone-border-radius, 1.4em), $border: var(--dropzone-border-color, 0.2em dashed var(--border-color, darken(rgb(230,230,230),12%)))) {
+    background: $bg;
+    min-height: $minHeight;
+    border-radius: $borderRadius;
+    border: $border;
+}
+
+@mixin emphatic-link($fontSize: var(--emphatic-link-font-size, 0.82em)) {
+    @extend %smallcaps;
+    font-size: $fontSize;
+}
+
+@mixin tip($fontSize: var(--emphatic-link-font-size, 0.678em)) {
+    @extend %clickable;
+    @extend %smallcaps;
+    font-size: $fontSize;
+}
+
+@mixin highlighted() {
+  //background:
+}
+
+/*
+http://www.phase2technology.com/blog/exploring-maps-in-sass-3-3/
+*/
+@mixin print-styles($map, $keys...){
+ $i: 1;
+ $length: length($keys);
+ @while $length >= $i  {
+   $map: map-get($map, nth($keys, $i));
+   $i: $i + 1;
+ }
+
+ @each $property, $value in $map {
+   @if type-of($value) != map {
+     #{$property}: $value;
+   }
+ }
+}
+
+
+%dropzone {
+    @include dropzone();
+}
+
+%emphatic-link {
+    @include emphatic-link();
+}
+
+%tip {
+    @include tip();
+}
+
+@mixin visually-hidden() { // http://a11yproject.com/posts/how-to-hide-content
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding:0 !important;
+  border:0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+
+  body:hover & {
+    a, input, button {
+      display: none !important;
+    }
+  }
+}
+
+%visually-hidden {
+    @include visually-hidden;
+}
+
+// Clearfix: contain floats
+
+%clearfix {
+  .lt-ie8 {
+    *zoom: 1;
+  }
+  &:before,
+  &:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
+  }
+  &:after {
+    clear: both;
+  }
+}

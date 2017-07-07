@@ -1,0 +1,23 @@
+.typography {
+  .captalized {
+    @extend %capitalized;
+  }
+  &.legible {
+    font-size: var(--legible-font-size, 120%);
+  }
+  &.very {
+    &.legible {
+      font-size: var(--very-legible-font-size, 200%);
+    }
+  }
+  &.extremely {
+    &.legible {
+      font-size: var(--extremely-legible-font-size, 400%);
+    }
+  }
+  &.balanced {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}

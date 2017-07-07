@@ -1,0 +1,106 @@
+[role="alert"] {
+  @extend %alert;
+}
+
+[role="button"] {
+  @extend %button;
+}
+
+[role="complementary"] {
+
+}
+
+a[role="presentation"] {
+  color: var(--anchor-presentation-color, currentColor);
+  text-decoration: var(--anchor-presentation-text-decoration, none);
+  &:hover {
+    color: var(--anchor-presentation-hover-color, currentColor);
+    text-decoration: var(--anchor-presentation-hover-text-decoration, none);
+  }
+}
+
+[role="contentinfo"] {
+  background: var(
+    --contentinfo-background,
+    var(
+      --darkmodule-background,
+      black
+    )
+  );
+  color: var(--contentinfo-color, white);
+  padding: var(
+    --contentinfo-padding,
+    var(--module-padding, 1em)
+  );
+}
+
+[role="dialog"] {
+  padding: var(
+    --dialog-padding,
+    var(--module-padding, 1em)
+  );
+  background: var(
+    --dialog-background,
+    rgb(220, 220, 220)
+  );
+  color: var(
+    --dialog-color,
+    rgb(90, 90, 90)
+  );
+  border: var(
+    --dialog-border,
+    1px solid rgb(90, 90, 90)
+  );
+  border-radius: var(
+    --dialog-border-radius,
+    0.5em
+  );
+  text-align: var(
+  --dialog-text-align,
+  left
+  )
+}
+
+[role="heading"] {
+  font-family: var(--heading-font-family, inherit);
+  font-weight: var(--heading-font-weight, bold);
+}
+
+@each $heading in $headings {
+  #{$heading} {
+    font-family: var(--#{$heading}-font-family, var(--heading-font-family, inherit));
+    font-weight: var(--#{$heading}-font-weight, var(--heading-font-weight, bold));
+  }
+}
+
+[role="link"] {
+  text-decoration: var(--link-text-decoration, underlined);
+}
+
+[role="list"] {
+  list-style-type: var(--list-list-stype-type, disc);
+}
+
+[role="banner"] {
+  margin: var(
+    --banner-margin,
+    var(--vulnerable-module-margin, var(--margin, 1rem))
+  );
+  /*
+  margin-right: var(
+    --banner-margin-right,
+    var(--vulnerable-module-margin-right, auto)
+  );
+  margin-bottom: var(
+    --banner-margin-bottom,
+    var(--vulnerable-module-margin-bottom, 1rem)
+  );
+  margin-left: var(
+    --banner-margin-left,
+    var(--vulnerable-module-margin-left, auto)
+  );
+  */
+  &:first-child {
+    margin-top: 0;
+  }
+}

@@ -1,300 +1,62 @@
-$desktop: max-width 61.875em 12 !default;
-$cinema: max-width 87.5em 12 !default;
-$iphoneP: max-width 30em 4 !default;
-$mobile: max-width 40em 4 !default;
-$tabletP: max-width 48em 12 !default;
-$tabletL: max-width 64px 12 !default;
+@import "global/vars";
+@import "settings/settings";
 
-$gtDesktop: min-width 61.9375em 12 !default;
-$gtCinema: min-width 87.5625em 12 !default;
-$gtiphoneP: min-width 30.0625em 4 !default;
-$gtMobile: min-width 40.0625em 12 !default;
-$gtTabletP: min-width 48.0625em 12 !default;
-$gtTabletL: min-width 64.0625em 12 !default;
 
-$tabletPH: max-height 48em 4 !default;
-$gtTabletPH: min-height 48.0625em 4 !default;
+@import "helpers/helpers";
+@import "addons/addons";
 
-@mixin luminosity($brightness: normal) {
-    @media screen and (luminosity: $brightness) {
-        @content;
-    }
+%alert {
+  color: var(--alert-color, red);
 }
 
-@mixin cursor($cursor: course) {
-    @media screen and (cursor: $cursor) {
-        @content;
-    }
+%button {
+  color: red;
 }
 
-$topMost: 99999 !default;
-$too-wide: 74em !default;
-
-%greedy {
-    width: 100%;
-    @include media($too-wide) {
-        width: auto;
-    }
+%flex {
+  display: flex;
 }
 
-%capitalized {
-    text-transform: uppercase;
-}
-
-%display-block {
+%block {
   display: block;
 }
 
-%display-inline {
-  display: inline;
-}
-
-%display-inline-block {
-  display: inline-block;
-}
-
-%very-greedy {
-    width: 100%;
-}
-
-%max-width-none {
-    max-width: none;
-}
-
-%code {
-    font-family: monospace, serif;
-}
-
-%clickable {
-    cursor: pointer;
-}
-
-%lightcaps {
-    @extend %capitalized;
-    font-size: 0.86em;
-    font-weight: inherit;
-}
-
-%smallcaps {
-    @extend %lightcaps;
-    font-weight: bold;
-}
-
-%bold {
-    font-weight: bold;
-}
-
-%unaligned {
-    text-align: center;
-}
-
-%shrinkable {
-    max-width: 100%;
-}
-
-%contained {
-    max-width: 100%;
-}
-
-%vulnerable {
-    margin: 0;
-}
-
-@mixin square() {
-    padding-bottom: 100%;
+// Module Component
+//
+// Use this silent class for to set abstract background, padding, and margin properties.
+//
+// Markup:
+// <div class="module">
+//   <h1>My Module</h1>
+// </div>
+//
+//
+// Styleguide Components.Buttons.bold
+.btn.btn-bold {
     position: relative;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-%square { /* http://codepen.io/thetallweeks/pen/tAdmL?editors=110 */
-    @include square;
-}
+%module {
+  background: var(--module-background, var(--background, transparent));
+  padding: var(--module-padding, var(--padding, 1rem));
+  margin: var(--module-margin, 1rem auto);
 
-@mixin absolute-corners() {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
-%absolute-corners {
-    @include absolute-corners;
-}
-
-@mixin dropzone($bg: rgb(230,230,230), $minHeight: 6em, $borderRadius: 1.4em, $border: 0.2em dashed darken(rgb(230,230,230),12%)) {
-    background: $bg;
-    min-height: $minHeight;
-    border-radius: $borderRadius;
-    border: $border;
-}
-
-@mixin emphatic-link($fontSize: 0.82em) {
-    @extend %smallcaps;
-    font-size: $fontSize;
-}
-
-@mixin tip($fontSize: 0.678em) {
-    @extend %clickable;
-    @extend %smallcaps;
-    font-size: $fontSize;
-}
-
-@mixin highlighted() {
-  background: 
-}
+  //margin-top: var(--module-margin-top, 1rem);
+  //margin-right: var(--module-margin-right, 1rem);
+  //margin-bottom: var(--module-margin-bottom, 1rem);
+  //margin-left: var(--module-margin-left, 1rem);
 
 
-/*
-http://www.phase2technology.com/blog/exploring-maps-in-sass-3-3/
-*/
-@mixin print-styles($map, $keys...){
- $i: 1;
- $length: length($keys);
- @while $length >= $i  {
-   $map: map-get($map, nth($keys, $i));
-   $i: $i + 1;
- }
+  border: var(--module-border, 1px solid rgb(220, 220, 220));
+  border-color: var(--module-border-color, var(--border-color, currentColor));
+  border-radius: var(--module-border-radius, .5rem);
 
- @each $property, $value in $map {
-   @if type-of($value) != map {
-     #{$property}: $value;
-   }
- }
-}
-
-@mixin scrollable($props:(
-  maxHeight: 8em,
-  overflowY: auto,
-  maxWidth: 100%,
-  overflowX: auto
-)) {
-    $maxHeight:map-get($props,maxHeight);
-    $overflowY:map-get($props,overflowY);
-    $maxWidth:map-get($props,maxWidth);
-    $overflowX:map-get($props,overflowX);
-
-    @include media($gtMobile) {
-        @if $maxHeight != null { max-height: $maxHeight; }
-        @if $overflowY != null { overflow-y: $overflowY; }
-
-        @if $maxWidth != null { max-width: maxWidth; }
-        @if $overflowX != null { overflow-x: overflowX; }
+  color: var(--module-color, var(--color, inherit));
+  > h1, h2, h3, h4, h5, h6, p {
+    &:first-child {
+      margin-top: var(--first-child-margin-top, 0);
     }
-}
-
-@mixin table-border-radius-fallback($borderRadius:0.5em) {
-    @if $borderRadius != null {
-        *border-collapse: collapse; /* IE7 and lower */
-        border-collapse: separate !important;
-        border-spacing: 0;
-        border-radius: $borderRadius;
-    }
-}
-
-@mixin pretty-table($props: (
-      tablePadding: 0 0.2em 0.2em 0.2em,
-      gutter: 1em,
-      paddingTop: 1em,
-      paddingBottom: 0.6em,
-      border: 1px solid darken(rgb(240, 240, 240), 12%),
-      borderRadius: 0.5em,
-      trOdd: null,
-      trEven:(
-        background:rgb(240, 240, 240),
-        border-top:1px solid darken(rgb(240, 240 ,240), 12%),
-        border-bottom:1px solid darken(rgb(240, 240, 240), 12%)
-      )
-    )) {
-    $tablePadding:map-get($props,tablePadding);
-    $gutter:map-get($props,gutter);
-    $paddingTop:map-get($props,paddingTop);
-    $paddingBottom:map-get($props,paddingBottom);
-    $border:map-get($props,border);
-    $borderRadius:map-get($props,borderRadius);
-    $trEven:map-get($props,trEven);
-    $trOdd:map-get($props,trOdd);
-
-    @if $tablePadding != null { padding:$tablePadding; }
-    @if $border != null { border:$border; }
-    @if $borderRadius != null { @include table-border-radius-fallback($borderRadius); }
-    @if $paddingTop != null {
-        thead > tr:first-of-type {
-            th {
-                padding-top:$paddingTop;
-            }
-        }
-    }
-    @if $paddingBottom != null {
-        tbody > tr:last-of-type {
-            td {
-                padding-bottom:$paddingBottom;
-            }
-        }
-    }
-    @if $gutter != null {
-        > thead tr, > tbody tr {
-            > td, > th {
-                &:first-of-type {
-                    padding-left:$gutter;
-                    padding-right:$gutter;
-                }
-            }
-        }
-    }
-    @if type-of($trEven) == map {
-        > tbody > tr:nth-child(even) {
-            @include print-styles($trEven);
-        }
-    }
-    @if type-of($trOdd) == map {
-        > tbody > tr:nth-child(odd) {
-            @include print-styles($trOdd);
-        }
-    }
-}
-
-%dropzone {
-    @include dropzone();
-}
-
-%emphatic-link {
-    @include emphatic-link();
-}
-
-%tip {
-    @include tip();
-}
-
-@mixin visually-hidden() { // http://a11yproject.com/posts/how-to-hide-content
-  position: absolute !important;
-  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-  clip: rect(1px, 1px, 1px, 1px);
-  padding:0 !important;
-  border:0 !important;
-  height: 1px !important;
-  width: 1px !important;
-  overflow: hidden;
-  white-space: no-wrap; // https://github.com/h5bp/html5-boilerplate/issues/1874
-}
-
-%visually-hidden {
-    @include visually-hidden;
-}
-
-// Clearfix: contain floats
-
-%clearfix {
-  .lt-ie8 {
-    *zoom: 1;
-  }
-  &:before,
-  &:after {
-    content: " ";
-    /* 1 */
-    display: table;
-    /* 2 */
-  }
-  &:after {
-    clear: both;
   }
 }

@@ -1,0 +1,31 @@
+@mixin luminosity($brightness: normal) {
+    @media screen and (luminosity: $brightness) {
+        @content;
+    }
+}
+
+@mixin cursor($cursor: course) {
+    @media screen and (cursor: $cursor) {
+        @content;
+    }
+}
+
+@mixin high-contrast($contrast: active) {
+    @media screen and (-ms-high-contrast: $contrast) {
+      @content;
+    }
+}
+
+@mixin reduced-motion($preference: reduce) {
+    @media screen and (prefers-reduced-motion: $preference) {
+
+    }
+}
+
+@mixin each-heading($headings: $headings) {
+  @each $heading in $headings {
+    #{$heading} {
+      @content;
+    }
+  }
+}
