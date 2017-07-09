@@ -1,0 +1,10 @@
+// Buttons
+//
+// Button styles
+//
+// Markup: ../../kss/buttons.html
+//
+// Style guide: Bootstraps.buttons
+button, .button {
+  @extend %button;
+}

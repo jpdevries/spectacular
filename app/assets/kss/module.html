@@ -1,0 +1,38 @@
+<style type="text/css">
+ /* Properties prefaced with --module- will apply only to elements that @extend %module; or are bootstrapped with .spectacular.module */
+  body {
+    --module-background: white;
+    --module-padding: 2rem;
+    --module-margin: 1rem auto;
+    --module-border: 1px solid rebeccapurple;
+    --module-border-radius: 1rem;
+    --module-color: rebeccapurple;
+  }
+
+  /* because CSS Properties naturally cascade, these properties can be overriden */
+  section.dark {
+    --module-background: rebeccapurple;
+    --module-border-color: rebeccapurple;
+    --module-color: white;
+  }
+</style>
+
+<style type="text/css">
+/* You can also set properties on specific elements using more generic properties: */
+  .module {
+    --background: white;
+    --color: rebeccapurple;
+  }
+</style>
+
+<div id="my-module" class="module">
+  <h2>My Module</h2>
+  <p>Hello world</p>
+</div>
+
+<section class="dark">
+  <div class="module">
+    <h2>My Module</h2>
+    <p>Hello world</p>
+  </div>
+</section>

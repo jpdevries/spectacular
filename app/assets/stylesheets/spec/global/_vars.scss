@@ -1,5 +1,52 @@
+// topMost
+//
+// Useful for setting high z-index values.
+//
+// <pre>
+// .sticky.navigation {
+//   z-index: $topMost;
+// }</pre>
+//
+// Styleguide Variables.topMost
+
 $topMost: var(--topMost, 2147483647) !default;
+
+// headings
+//
+// A generic variable for headings. Defaults to <code>h1 h2 h3 h4 h5 h6</code>.
+//
+// <pre>
+// @each $heading in $headings {
+//   #{$heading} {
+//     color: rebeccapurple;
+//   }
+// }</pre>
+//
+// Styleguide Variables.headings
 $headings: h1 h2 h3 h4 h5 h6 !default;
+
+// Pixels per rem
+//
+// Used when converting declarative pixel units to relative em units. Defaults to <code>16</code>.
+//
+// <pre>
+// $px-per-rem: 18;</pre>
+//
+// Styleguide Variables.pxPerRem
 $px-per-rem: 16 !default;
 
+// alphabet
+//
+// The alphabet a-z as a Sass variable. Useful for things like assigning areas to grid based layouts.
+//
+// <pre>
+// @each $letter in $alphabet {
+//   .grid-area-#{$letter} {
+//     grid-area: #{$letter};
+//   }
+// }</pre>
+//
+// Styleguide Variables.alphabet
 $alphabet: a b c d e f g h i j k l m n o p q r s t u v w x y z;
+
+$box-sizing: border-box !default;

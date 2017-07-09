@@ -63,12 +63,22 @@
   </head>
   <body class="layout">
     <section id="cover" role="banner" class="cover layout">
-      <h1 class="extremely legible typography">
-        🎉<br>
-        <span>spec<i>tacular</i></span>
-      </h1>
-      <p><i>Make your Sass&nbsp;spectacular<br /><small>or&nbsp;not</small></i></p>
-      <a href="#">Let’s Go</a>
+      <header>
+        <h1 class="extremely legible typography">
+          🎉<br>
+          <span>spec<i>tacular</i></span>
+        </h1>
+        <p><i>Make your Sass&nbsp;spectacular<br /><small>or&nbsp;not</small></i></p>
+      </header>
+      <a href="#silent" class="button">Let’s Go</a>
+
+      <footer class="unbiased flexible layout">
+        <!-- Place this tag where you want the button to render. -->
+        <!--a class="github-button" href="https://github.com/jpdevries/spectacular/subscription" data-size="large" aria-label="Watch jpdevries/spectacular on GitHub">Watch</a-->
+        <!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/jpdevries/spectacular" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star jpdevries/spectacular on GitHub">Star</a>
+      </footer>
+
     </section>
     <aside hidden role="search" class="persistent layout">
       <form class="flexible unbiased legible typography layout" action="index.html" method="post">
@@ -80,6 +90,51 @@
 
       </form>
     </aside>
+
+    <section id="install" class="greedy">
+      <header>
+        <h2>
+          📦<br />
+          <em>getting started</em>
+        </h2>
+        <div>
+          <p>spec<em>tacular</em> can be <a href="https://bower.io/#install-bower" target="_install-bower">installed with&nbsp;Bower</a>.</p>
+        </div>
+        <div class="flexible unbiased layout" style="">
+          <pre>
+bower install spectacular --save</pre>
+        </div>
+      </header>
+
+
+      <details>
+        <summary aria-label="More info on getting started with spectacular">More info</summary>
+        <div>
+          <div>
+            <p>You'll then find spec<em>tacular</em> in your <code>bower_components</code>&nbsp;folder.</p>
+          </div>
+          <div class="flexible unbiased layout">
+            <pre>
+    ls bower_components/spec/app/assets/stylesheets</pre>
+          </div>
+          <div>
+            <p>We recommend adding an <code>exportsOverride</code> to your <code>bower.json</code>.</p>
+          </div>
+          <div>
+            <pre>
+"exportsOverride": {
+  "spectacular": {
+    "": "app/assets/stylesheets/"
+  },
+}</pre>
+          </div>
+          <div>
+            <p>That way if you are using something like <code>grunt-bower</code> you'll find just the spec<em>tacular</em> Sass source files in your <code>./lib</code>&nbsp;directory.</p>
+          </div>
+        </div>
+      </details>
+
+    </section>
 
     <section id="silent" class="greedy">
       <header>
@@ -137,7 +192,7 @@
       <header>
         <h2>
           💅<br />
-          themable
+          <em>themable</em>
         </h2>
         <div>
           <p>
@@ -152,9 +207,15 @@
 /* bootstrap your layouts */
 @import "spec/bootstraps/layout";
 
+body {
+  --layout-thin-max-width: 42ch;
+}
+
+/* is analagous to: */
+
 .layout {
   &.thin {
-    --max-width: 42ch; // customize thin width
+    --max-width: 42ch;
   }
 }
         </pre>
@@ -185,12 +246,13 @@
 }
 
 .my-component {
+  @extend %module;
   @include high-contrast(white-on-black) {
     --black: rgb(8, 8, 8); /* almost solid black */
     --white: rgb(253, 253, 253); /* almost pure white */
 
-    --background: --black;
-    --color: --white;
+    --background: var(--black, black);
+    --color: var(--white, white);
   }
 }
   </pre>
@@ -238,8 +300,18 @@ h1, h2, h3, .capitalized {
         <p>
           Thanks for checking out spec<i>tacular</i>. This project is a work in progress and being rapidly developed, so give us a follow and remember if you like it then you shoulda <a href="https://github.com/jpdevries/spectacular" target="_spectacular-github">put&nbsp;a&nbsp;star&nbsp;on&nbsp;it</a>.
         </p>
+        <div class="unbiased balanced flexible layout">
+          <!-- Place this tag where you want the button to render. -->
+          <!--a class="github-button" href="https://github.com/jpdevries/spectacular/subscription" data-size="large" aria-label="Watch jpdevries/spectacular on GitHub">Watch</a-->
+          <!-- Place this tag where you want the button to render. -->
+  <a class="github-button" href="https://github.com/jpdevries/spectacular" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star jpdevries/spectacular on GitHub">Star</a>
+        </div>
       </header>
 
     </footer>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
   </body>
 </html>

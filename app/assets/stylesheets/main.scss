@@ -67,6 +67,12 @@
   font-weight: 700;
 }
 
+%operator-screensmart-bold-talic {
+  @extend %operator-screensmart;
+  font-style: italic;
+  font-weight: 700;
+}
+
 .operator-screensmart-bold {
   @extend %operator-screensmart-bold;
 }
@@ -93,7 +99,7 @@
 }
 
 div.foo {
-  @extend %alphabetical-grid-areas;
+  @extend %grid-areas;
 }
 
 code, pre {
@@ -126,6 +132,11 @@ section, footer, header {
   color: darken(#f2efbf, 68%);
 }
 
+#install {
+  background: #d9b9fa;
+  color: darken(#d9b9fa, 68%);
+}
+
 pre {
   text-align: left;
   margin: 0 auto;
@@ -133,6 +144,12 @@ pre {
 
 footer[role="contentinfo"] {
   text-align: center;
+
+  .flexible.balanced {
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+  }
 
   background: #adeae9;
   color: #025b84;
@@ -160,7 +177,7 @@ body > section {
       }
     }
   }
-  > div {
+  > div, header > div, details > div {
     margin-left: auto;
     margin-right: auto;
     pre {
@@ -249,6 +266,16 @@ section, header {
 #cover {
   background: #adeae9;
   color: #025b84;
+
+  footer {
+    margin-top: 1rem;
+  }
+
+  iframe {
+    min-width: 80px;
+    min-height: 28px;
+  }
+
   //border-bottom: 1px solid darken(#adeae9, 12%);
   --border-color: darken(#adeae9, 12%);
   --margin: 0 auto;
@@ -321,6 +348,24 @@ body > nav {
   text-align: center;
 }
 
+.button {
+  font-size: larger;
+  display: block;
+  color: currentColor;
+  border: 1px solid currentColor;
+  border-bottom-width: .1875em;
+  text-decoration: none;
+  border-radius: .25em;
+  padding: .25em;
+  &:hover, &:focus {
+    background: #025b84;
+    color: lighten(#adeae9, 8%);
+    border-color: darken(#025b84, 12%);
+  }
+}
+
 section.greedy {
-  min-height: 100vh;
+  //min-height: 100vh;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }

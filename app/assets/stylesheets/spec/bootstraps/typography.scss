@@ -1,23 +1,174 @@
-.typography {
-  .captalized {
-    @extend %capitalized;
-  }
-  &.legible {
-    font-size: var(--legible-font-size, 120%);
-  }
-  &.very {
+%xx-small {
+  font-size: xx-small;
+}
+
+%medium {
+  font-size: medium;
+}
+
+%xx-small {
+  font-size: xx-small;
+}
+
+%x-small {
+  font-size: x-small;
+}
+
+%small {
+  font-size: small;
+}
+
+%large {
+  font-size: large;
+}
+
+%x-large {
+  font-size: x-large;
+}
+
+%xx-large {
+  font-size: xx-large;
+}
+
+%smaller {
+  font-size: smaller;
+}
+
+%larger {
+  font-size: larger;
+}
+
+.spectacular, .spectacularly {
+  .typography, &.typography {
+    // Capitalized
+    //
+    // Captilazies text
+    //
+    // Markup: ../../kss/typography.captalized.html
+    //
+    // Style guide: Bootstraps.typography.captalized
+    .capitalized {
+      @extend %capitalized;
+    }
+
+    // Medium Text
+    //
+    // Sets an medium font size
+    //
+    // Markup: ../../kss/typography.medium.html
+    //
+    // Style guide: Bootstraps.typography.size.medium
+    .medium {
+      @extend %medium;
+    }
+
+    // XXS Text
+    //
+    // Sets an extra extra small font size
+    //
+    // Markup: ../../kss/typography.xx-small.html
+    //
+    // Style guide: Bootstraps.typography.size.xx-small
+    .xx-small {
+      @extend %xx-small;
+    }
+
+    // Extra Small Text
+    //
+    // Sets a extra small font size
+    //
+    // Markup: ../../kss/typography.x-small.html
+    //
+    // Style guide: Bootstraps.typography.size.x-small
+    .x-small {
+      @extend %x-small;
+    }
+
+    // Small Text
+    //
+    // Sets a smaller font size
+    //
+    // Markup: ../../kss/typography.small.html
+    //
+    // Style guide: Bootstraps.typography.size.small
+    .small {
+      @extend %small;
+    }
+
+    // Large Text
+    //
+    // Sets a large font size
+    //
+    // Markup: ../../kss/typography.large.html
+    //
+    // Style guide: Bootstraps.typography.size.large
+    .large {
+      @extend %large;
+    }
+
+    // Extra Large Text
+    //
+    // Sets an extra large font size
+    //
+    // Markup: ../../kss/typography.x-large.html
+    //
+    // Style guide: Bootstraps.typography.size.x-large
+    .x-large {
+      @extend %x-large;
+    }
+
+    // XXL Text
+    //
+    // Sets an extra extra larger font size
+    //
+    // Markup: ../../kss/typography.xx-large.html
+    //
+    // Style guide: Bootstraps.typography.size.xx-large
+    .xx-large {
+      @extend %xx-large;
+    }
+
+    // Smaller Text
+    //
+    // Sets a smaller font size
+    //
+    // Markup: ../../kss/typography.smaller.html
+    //
+    // Style guide: Bootstraps.typography.size.smaller
+    .smaller {
+      @extend %smaller;
+    }
+
+    // Larger Text
+    //
+    // Sets a larger font size
+    //
+    // Markup: ../../kss/typography.larger.html
+    //
+    // Style guide: Bootstraps.typography.size.larger
+    .larger {
+      @extend %larger;
+    }
+
     &.legible {
-      font-size: var(--very-legible-font-size, 200%);
+      font-size: var(--legible-font-size, 120%);
+    }
+    &.very {
+      &.legible {
+        font-size: var(--very-legible-font-size, 200%);
+      }
+    }
+    &.extremely {
+      &.legible {
+        font-size: var(--extremely-legible-font-size, 400%);
+      }
+    }
+
+    &.balanced {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
     }
   }
-  &.extremely {
-    &.legible {
-      font-size: var(--extremely-legible-font-size, 400%);
-    }
-  }
-  &.balanced {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
+
 }

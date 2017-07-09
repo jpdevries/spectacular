@@ -6,11 +6,21 @@
 @import "addons/addons";
 
 %alert {
-  color: var(--alert-color, red);
+  color: var(--alert-color, var(--dangerous-color, red));
 }
 
 %button {
-  color: red;
+  background: var(--button-background, var(--background));
+  border: var(--button-border, var(--border));
+  border-color: var(--button-border-color, var(--border-color));
+  color: var(--button-color, var(--color));
+  text-decoration: var(--button-text-decoration, var(--text-decoration));
+  display: var(--button-display);
+  padding: var(--button-padding, var(--padding));
+
+  &.smooth {
+    transition: var(--transition, all 420ms ease);
+  }
 }
 
 %flex {
@@ -21,27 +31,31 @@
   display: block;
 }
 
-// Module Component
-//
-// Use this silent class for to set abstract background, padding, and margin properties.
-//
-// Markup:
-// <div class="module">
-//   <h1>My Module</h1>
-// </div>
-//
-//
-// Styleguide Components.Buttons.bold
+
 .btn.btn-bold {
     position: relative;
     font-weight: bold;
     text-transform: uppercase;
 }
 
+// Module Component
+//
+// Use this silent class to set color, background, padding, margin, and border properties.
+//
+// <pre>
+// @include "spec/tacular";
+//
+// .module {
+//   @extend %module;
+// }</pre>
+//
+// Markup: ../../kss/module.html
+//
+// Style guide: Components.module
 %module {
   background: var(--module-background, var(--background, transparent));
   padding: var(--module-padding, var(--padding, 1rem));
-  margin: var(--module-margin, 1rem auto);
+  margin: var(--module-margin, var(--margin, 1rem auto));
 
   //margin-top: var(--module-margin-top, 1rem);
   //margin-right: var(--module-margin-right, 1rem);
@@ -49,9 +63,9 @@
   //margin-left: var(--module-margin-left, 1rem);
 
 
-  border: var(--module-border, 1px solid rgb(220, 220, 220));
-  border-color: var(--module-border-color, var(--border-color, currentColor));
-  border-radius: var(--module-border-radius, .5rem);
+  border: var(--module-border, var(--border, 1px solid rgb(220, 220, 220)));
+  //border-color: var(--module-border-color, var(--border-color, currentColor));
+  border-radius: var(--module-border-radius, var(--border-radius, .5rem));
 
   color: var(--module-color, var(--color, inherit));
   > h1, h2, h3, h4, h5, h6, p {
@@ -59,4 +73,14 @@
       margin-top: var(--first-child-margin-top, 0);
     }
   }
+
+  > * {
+    &:first-child {
+      margin: var(--module-first-child-margin, var(--first-child-margin, auto));
+    }
+    &:last-child {
+      margin: var(--module-last-child-margin, var(--last-child-margin, auto));
+    }
+  }
+
 }

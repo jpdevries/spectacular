@@ -1,0 +1,141 @@
+@import "spec/tacular";
+
+@import "spec/bootstraps/aria";
+@import "spec/bootstraps/base";
+@import "spec/bootstraps/buttons";
+@import "spec/bootstraps/contrast";
+@import "spec/bootstraps/effects";
+@import "spec/bootstraps/heading";
+@import "spec/bootstraps/layout";
+@import "spec/bootstraps/module";
+@import "spec/bootstraps/typography";
+@import "spec/bootstraps/visibility";
+
+%operator-screensmart {
+  font-family: "Operator SSm A", "Operator SSm B";
+}
+
+%operator-screensmart-medium {
+  @extend %operator-screensmart;
+  font-style: normal;
+  font-weight: 500;
+}
+
+%operator-screensmart-medium-italic {
+  @extend %operator-screensmart-medium;
+  font-style: italic;
+}
+
+.operator-screensmart-medium-italic {
+  @extend %operator-screensmart-medium-italic;
+}
+
+%operator-screensmart-book {
+  font-family: "Operator SSm A", "Operator SSm B";
+  font-style: normal;
+  font-weight: 400;
+}
+
+%operator-screensmart-mono-book {
+  font-family: "Operator Mono SSm A", "Operator Mono SSm B";
+  font-style: normal;
+  font-weight: 400;
+}
+
+.operator-screensmart-book {
+  @extend %operator-screensmart-book;
+}
+
+%operator-screensmart-bold {
+  @extend %operator-screensmart;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.operator-screensmart-bold {
+  @extend %operator-screensmart-bold;
+}
+
+%operator-screensmart-bold-italic {
+  @extend %operator-screensmart-bold;
+  font-style: italic;
+}
+
+%operator-screensmart-bold-italic {
+  @extend %operator-screensmart-bold-italic;
+}
+
+%operator-screensmart-medium-italic {
+  @extend %operator-screensmart;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.operator-screensmart-medium-italic {
+  @extend %operator-screensmart-medium-italic;
+}
+
+%operator-screensmart-black {
+  @extend %operator-screensmart;
+  font-style: normal;
+  font-weight: 800;
+}
+
+%operator-screensmart-black-italic {
+  @extend %operator-screensmart-black;
+  font-style: italic;
+}
+
+body {
+  @extend %operator-screensmart-book;
+}
+
+.kss-section__item {
+  @extend %operator-screensmart-bold-italic;
+}
+
+.kss-title {
+  @extend %operator-screensmart-book;
+}
+
+.kss-header {
+  @extend %operator-screensmart-book;
+}
+
+.kss-navigation {
+  @extend %operator-screensmart-book;
+}
+
+pre, code[class*="language-"], pre[class*="language-"] {
+  @extend %operator-screensmart-mono-book;
+}
+
+.kss-markdown h1, .kss-markdown h2, .kss-markdown h3, .kss-markdown h4, .kss-markdown h5, .kss-markdown h6 {
+  @extend %operator-screensmart-bold-italic;
+}
+
+.kss-section__content {
+  @extend %operator-screensmart-book;
+}
+
+.kss-section__item {
+  @extend %operator-screensmart-book;
+}
+
+.module {
+  @extend %module;
+  --first-child-margin: auto auto auto auto;
+  --last-child-margin: auto 0 auto auto;
+}
+
+.kss-title, .kss-section__item, .kss-nav__item a.kss-state-active, .kss-modifiers__heading, .kss-nav__item a:hover {
+  color: rebeccapurple;
+}
+
+.grid.layout {
+  @include grid-areas;
+}
+
+.outlined {
+  outline: var(--outline, 1px solid currentColor);
+}

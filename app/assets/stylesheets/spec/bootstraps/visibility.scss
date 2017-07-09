@@ -1,3 +1,15 @@
+// Visually Hidden
+//
+// Visually hides an element without removing it from the accessibility&nbsp;tree.
+//
+// Markup: ../../kss/visually.hidden.html
+//
+// Style guide: Bootstraps.visual.hidden
+
 [hidden="visually"] {
+  display: inline;
+}
+
+[hidden="visually"], .visually-hidden {
   @extend %visually-hidden;
 }

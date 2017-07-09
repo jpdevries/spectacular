@@ -1,31 +1,133 @@
+// luminosity
+//
+// Applies a luminosity media query to Sass content.
+//
+// <pre>
+// body {
+//   @include luminosity(dim) {
+//      background: black;
+//   }
+// }</pre>
+//
+// Styleguide Mixins.luminosity
+
 @mixin luminosity($brightness: normal) {
     @media screen and (luminosity: $brightness) {
         @content;
     }
 }
 
-@mixin cursor($cursor: course) {
-    @media screen and (cursor: $cursor) {
+// pointer
+//
+// Applies a <a href="https://developer.mozilla.org/en/docs/Web/CSS/@media/pointer" target="_mdn-pointer">pointer media query</a> to Sass&nbsp;content.
+//
+// <pre>
+// body {
+//   @include pointer(coarse) {
+//      font-size: 120%;
+//   }
+// }</pre>
+//
+// Styleguide Mixins.luminosity
+@mixin pointer($cursor: course) {
+    @media screen and (pointer: $cursor) {
         @content;
     }
 }
 
+// high-contrast
+//
+// Applies a <a href="https://msdn.microsoft.com/en-us/library/hh771830(v=vs.85).aspx" target="_ms-high-contrast">-ms-high-contrast</a> to Sass&nbsp;content.
+//
+// <pre>
+// body {
+//   @include high-contrast(black-on-white) {
+//      --background: white;
+//      --color: black;
+//   }
+// }</pre>
+//
+// Styleguide Mixins.high-contrast
 @mixin high-contrast($contrast: active) {
     @media screen and (-ms-high-contrast: $contrast) {
       @content;
     }
 }
 
+// reduce-motion
+//
+// Applies a <a href="https://css-tricks.com/introduction-reduced-motion-media-query/" target="_css-tricks-reduce-motion">-reduce-motion</a> media query to Sass&nbsp;content.
+//
+// <pre>
+// * {
+//   @include reduce-motion() {
+//      transition-duration: 0 !important;
+//   }
+// }</pre>
+//
+// Styleguide Mixins.reduce-motion
 @mixin reduced-motion($preference: reduce) {
     @media screen and (prefers-reduced-motion: $preference) {
 
     }
 }
 
+// each-heading
+//
+// Applies Sass content to one or more heading elements.
+//
+// <em>Parameters</em><br>
+// <table>
+//   <tbody>
+//     <tr>
+//       <td><code>$headings</code></td>
+//       <td>optional, headings to iterate over</td>
+//     </tr>
+//   </tbody>
+// </table>
+//
+// <pre>
+// * {
+//   @include each-heading(h2 h3) {
+//      color: rebeccapurple;
+//   }
+// }</pre>
+//
+// Styleguide Mixins.each-heading
 @mixin each-heading($headings: $headings) {
   @each $heading in $headings {
     #{$heading} {
       @content;
+    }
+  }
+}
+
+// grid-areas
+//
+// Iterates over areas applying a grid-area to each.
+//
+// <em>Parameters</em><br>
+// <table>
+//   <tbody>
+//     <tr>
+//       <td><code>$areas</code></td>
+//       <td>optional, defaults to <code>$alphabet</code></td>
+//     </tr>
+//   </tbody>
+// </table>
+//
+// <pre>
+// .my.spectacular.grid.layout {
+//   @include grid-areas(a b c d);
+// }</pre>
+//
+// Markup: ../../kss/mixins.grid-areas.html
+//
+// Styleguide Mixins.each-heading
+@mixin grid-areas($areas: $alphabet) {
+  @each $area in $areas {
+    .grid-area-#{$area} {
+      grid-area: #{$area};
     }
   }
 }

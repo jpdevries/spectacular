@@ -2,6 +2,13 @@
   @extend %alert;
 }
 
+// [role="button"]
+//
+// Extends <code>%button</code>
+//
+// Markup: ../../kss/role.button.html
+//
+// Style guide: Bootstraps.ARIA.button
 [role="button"] {
   @extend %button;
 }
@@ -10,6 +17,13 @@
 
 }
 
+// [role="presentation"]
+//
+// Sets styles for elements with <code>role="presentation"</code>.
+//
+// Markup: ../../kss/role.presentation.html
+//
+// Style guide: Bootstraps.ARIA.presentation
 a[role="presentation"] {
   color: var(--anchor-presentation-color, currentColor);
   text-decoration: var(--anchor-presentation-text-decoration, none);
@@ -19,19 +33,43 @@ a[role="presentation"] {
   }
 }
 
+
+// [role="contentinfo"]
+//
+// Sets styles for a global footer.
+//
+// Markup: ../../kss/content.info.html
+//
+// Style guide: Bootstraps.ARIA.contentinfo
 [role="contentinfo"] {
   background: var(
     --contentinfo-background,
     var(
       --darkmodule-background,
-      black
+      var(--background, black)
     )
   );
   color: var(--contentinfo-color, white);
+  a {
+    color: var(--contentinfo-link-color, var(--link-color, currentColor));
+    text-decoration: var(--contentinfo-text-decoration, var(--text-decoration, none));
+    &:hover {
+      color: var(--contentinfo-link-color, var(--link-color, currentColor));
+      text-decoration: var(--contentinfo-hover-text-decoration, var(--hover-text-decoration, underline));
+    }
+    &:focus {
+      color: var(--contentinfo-link-color, var(--link-color, currentColor));
+      text-decoration: var(--contentinfo-focus-text-decoration, var(--focus-text-decoration, underline));
+    }
+  }
   padding: var(
     --contentinfo-padding,
     var(--module-padding, 1em)
   );
+}
+
+a {
+  //color: var(--link-color, var(--color, auto));
 }
 
 [role="dialog"] {

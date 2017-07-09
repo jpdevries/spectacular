@@ -21,5 +21,10 @@
   "devDependencies": {
     "bourbon": "~4.2.5",
     "neat": "~1.7.2"
+  },
+  "exportsOverride": {
+    "spectacular": {
+      "": "app/assets/stylesheets/"
+    },
   }
 }

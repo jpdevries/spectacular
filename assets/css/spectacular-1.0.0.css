@@ -1,12 +1,12 @@
-.layout.cover, aside[role="search"] form > div input, form[action*="signup"] input {
+.spectacular.layout.cover, .spectacular .layout.cover, .spectacularly.layout.cover, .spectacularly .layout.cover, aside[role="search"] form > div input, form[action*="signup"] input {
   width: var(--greedy, 100%);
 }
 
-.typography .captalized {
+.spectacular .typography .capitalized, .spectacular.typography .capitalized, .spectacularly .typography .capitalized, .spectacularly.typography .capitalized {
   text-transform: uppercase;
 }
 
-.layout.very.greedy {
+.spectacular.layout.very.greedy, .spectacular .layout.very.greedy, .spectacularly.layout.very.greedy, .spectacularly .layout.very.greedy {
   width: var(--very-greedy, 100%);
 }
 
@@ -26,19 +26,19 @@ section[role="banner"], header[role="banner"] {
   filter: grayscale(100%);
 }
 
-.layout img:not(.uncontained), .layout.contained, .layout .shrinkable {
+.spectacular.layout img:not(.uncontained), .spectacular .layout img:not(.uncontained), .spectacularly.layout img:not(.uncontained), .spectacularly .layout img:not(.uncontained), .spectacular.layout.contained, .spectacular.layout .shrinkable, .spectacular .layout.contained, .spectacular .layout .shrinkable, .spectacularly.layout.contained, .spectacularly.layout .shrinkable, .spectacularly .layout.contained, .spectacularly .layout .shrinkable {
   max-width: var(--contained-max-width, 100%);
 }
 
-.layout.vulnerable {
+.spectacular.layout.vulnerable, .spectacular .layout.vulnerable, .spectacularly.layout.vulnerable, .spectacularly .layout.vulnerable {
   margin: var(--vulerable-margin, 0);
 }
 
-.layout.flexible.unbiased > * {
+.spectacular.layout.flexible.unbiased > *, .spectacular .layout.flexible.unbiased > *, .spectacularly.layout.flexible.unbiased > *, .spectacularly .layout.flexible.unbiased > * {
   flex: var(--flexibly-equal-children, 1 0 auto);
 }
 
-.layout.grid {
+.spectacular.layout.grid, .spectacular .layout.grid, .spectacularly.layout.grid, .spectacularly .layout.grid {
   display: grid;
 }
 
@@ -52,7 +52,7 @@ http://www.phase2technology.com/blog/exploring-maps-in-sass-3-3/
   border: var(--dropzone-border-color, 0.2em dashed var(--border-color, #c7c7c7));
 }
 
-[hidden="visually"] {
+[hidden="visually"], .visually-hidden {
   position: absolute !important;
   clip: rect(1px 1px 1px 1px);
   /* IE6, IE7 */
@@ -63,32 +63,41 @@ http://www.phase2technology.com/blog/exploring-maps-in-sass-3-3/
   width: 1px !important;
   overflow: hidden;
 }
-body:hover [hidden="visually"] a, body:hover [hidden="visually"] input, body:hover [hidden="visually"] button {
+body:hover [hidden="visually"] a, body:hover .visually-hidden a, body:hover [hidden="visually"] input, body:hover .visually-hidden input, body:hover [hidden="visually"] button, body:hover .visually-hidden button {
   display: none !important;
 }
 
-.layout.clearfix .lt-ie8 {
+.spectacular.layout.clearfix .lt-ie8, .spectacular .layout.clearfix .lt-ie8, .spectacularly.layout.clearfix .lt-ie8, .spectacularly .layout.clearfix .lt-ie8 {
   *zoom: 1;
 }
-.layout.clearfix:before, .layout.clearfix:after {
+.spectacular.layout.clearfix:before, .spectacular .layout.clearfix:before, .spectacularly.layout.clearfix:before, .spectacularly .layout.clearfix:before, .spectacular.layout.clearfix:after, .spectacular .layout.clearfix:after, .spectacularly.layout.clearfix:after, .spectacularly .layout.clearfix:after {
   content: " ";
   /* 1 */
   display: table;
   /* 2 */
 }
-.layout.clearfix:after {
+.spectacular.layout.clearfix:after, .spectacular .layout.clearfix:after, .spectacularly.layout.clearfix:after, .spectacularly .layout.clearfix:after {
   clear: both;
 }
 
 [role="alert"] {
-  color: var(--alert-color, red);
+  color: var(--alert-color, var(--dangerous-color, red));
 }
 
 [role="button"] {
-  color: red;
+  background: var(--button-background, var(--background));
+  border: var(--button-border, var(--border));
+  border-color: var(--button-border-color, var(--border-color));
+  color: var(--button-color, var(--color));
+  text-decoration: var(--button-text-decoration, var(--text-decoration));
+  display: var(--button-display);
+  padding: var(--button-padding, var(--padding));
+}
+.smooth[role="button"] {
+  transition: var(--transition, all 420ms ease);
 }
 
-.layout.flexible {
+.spectacular.layout.flexible, .spectacular .layout.flexible, .spectacularly.layout.flexible, .spectacularly .layout.flexible {
   display: flex;
 }
 
@@ -105,14 +114,19 @@ label {
 .module, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy), footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy), header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) {
   background: var(--module-background, var(--background, transparent));
   padding: var(--module-padding, var(--padding, 1rem));
-  margin: var(--module-margin, 1rem auto);
-  border: var(--module-border, 1px solid gainsboro);
-  border-color: var(--module-border-color, var(--border-color, currentColor));
-  border-radius: var(--module-border-radius, 0.5rem);
+  margin: var(--module-margin, var(--margin, 1rem auto));
+  border: var(--module-border, var(--border, 1px solid gainsboro));
+  border-radius: var(--module-border-radius, var(--border-radius, 0.5rem));
   color: var(--module-color, var(--color, inherit));
 }
 .module > h1:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > h1:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > h1:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > h1:first-child, .module h2:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h2:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h2:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h2:first-child, .module h3:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h3:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h3:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h3:first-child, .module h4:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h4:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h4:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h4:first-child, .module h5:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h5:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h5:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h5:first-child, .module h6:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h6:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h6:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h6:first-child, .module p:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) p:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) p:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) p:first-child {
   margin-top: var(--first-child-margin-top, 0);
+}
+.module > *:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > *:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > *:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > *:first-child {
+  margin: var(--module-first-child-margin, var(--first-child-margin, auto));
+}
+.module > *:last-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > *:last-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > *:last-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > *:last-child {
+  margin: var(--module-last-child-margin, var(--last-child-margin, auto));
 }
 
 a[role="presentation"] {
@@ -125,9 +139,21 @@ a[role="presentation"]:hover {
 }
 
 [role="contentinfo"] {
-  background: var(--contentinfo-background, var(--darkmodule-background, black));
+  background: var(--contentinfo-background, var(--darkmodule-background, var(--background, black)));
   color: var(--contentinfo-color, white);
   padding: var(--contentinfo-padding, var(--module-padding, 1em));
+}
+[role="contentinfo"] a {
+  color: var(--contentinfo-link-color, var(--link-color, currentColor));
+  text-decoration: var(--contentinfo-text-decoration, var(--text-decoration, none));
+}
+[role="contentinfo"] a:hover {
+  color: var(--contentinfo-link-color, var(--link-color, currentColor));
+  text-decoration: var(--contentinfo-hover-text-decoration, var(--hover-text-decoration, underline));
+}
+[role="contentinfo"] a:focus {
+  color: var(--contentinfo-link-color, var(--link-color, currentColor));
+  text-decoration: var(--contentinfo-focus-text-decoration, var(--focus-text-decoration, underline));
 }
 
 [role="dialog"] {
@@ -357,49 +383,104 @@ div.foo .grid-area-z {
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: var(--box-sizing, border-box);
 }
 
-body.layout {
-  margin: var(--margin, 0);
-}
-
-.layout.persistent {
+.spectacular.layout.persistent, .spectacular .layout.persistent, .spectacularly.layout.persistent, .spectacularly .layout.persistent {
   position: sticky;
   top: 0;
 }
-.layout.flexible.unbiased > * {
-  margin-right: var(--flexible-unbiased-item-margin-right, 1rem);
+.spectacular.layout .item.padded, .spectacular .layout .item.padded, .spectacularly.layout .item.padded, .spectacularly .layout .item.padded {
+  padding: var(--flexible-item-padding, var(--item-padding, var(--padding, 1rem)));
 }
-.layout.flexible.unbiased > *:last-child {
-  margin-right: var(--flexible-unbiased-last-item-margin-right, 0);
+.spectacular.layout.flexible.reversed, .spectacular .layout.flexible.reversed, .spectacularly.layout.flexible.reversed, .spectacularly .layout.flexible.reversed {
+  flex-direction: row-reverse;
 }
-.layout.cover {
+.spectacular.layout.flexible.vertical, .spectacular .layout.flexible.vertical, .spectacularly.layout.flexible.vertical, .spectacularly .layout.flexible.vertical {
+  flex-direction: column;
+}
+.spectacular.layout.flexible.vertical.reversed, .spectacular .layout.flexible.vertical.reversed, .spectacularly.layout.flexible.vertical.reversed, .spectacularly .layout.flexible.vertical.reversed {
+  flex-direction: column-reverse;
+}
+.spectacular.layout.flexible.unbiased > *, .spectacular .layout.flexible.unbiased > *, .spectacularly.layout.flexible.unbiased > *, .spectacularly .layout.flexible.unbiased > * {
+  margin-right: var(--flexible-unbiased-item-margin-right, var(--item-margin-right, 1rem));
+}
+.spectacular.layout.flexible.unbiased > *:last-child, .spectacular .layout.flexible.unbiased > *:last-child, .spectacularly.layout.flexible.unbiased > *:last-child, .spectacularly .layout.flexible.unbiased > *:last-child {
+  margin-right: var(--flexible-unbiased-last-item-margin-right, var(--last-item-margin-right, 0));
+}
+.spectacular.layout.cover, .spectacular .layout.cover, .spectacularly.layout.cover, .spectacularly .layout.cover {
   min-height: var(--cover-min-height, 100vh);
 }
-.layout.balanced {
+.spectacular.layout.center, .spectacular.layout.centered, .spectacular .layout.center, .spectacular .layout.centered, .spectacularly.layout.center, .spectacularly.layout.centered, .spectacularly .layout.center, .spectacularly .layout.centered {
+  text-align: center;
+}
+.spectacular.layout.balanced, .spectacular .layout.balanced, .spectacularly.layout.balanced, .spectacularly .layout.balanced {
   margin-left: auto;
   margin-right: auto;
   --module-margin-left: auto;
   --module-margin-right: auto;
 }
-.layout.thin {
+.spectacular.layout.thin, .spectacular .layout.thin, .spectacularly.layout.thin, .spectacularly .layout.thin {
   max-width: var(--layout-thin-max-width, var(--max-width, 18em));
 }
 
-.typography.legible {
+.spectacular .typography .xx-small, .spectacular.typography .xx-small, .spectacularly .typography .xx-small, .spectacularly.typography .xx-small {
+  font-size: xx-small;
+}
+
+.spectacular .typography .medium, .spectacular.typography .medium, .spectacularly .typography .medium, .spectacularly.typography .medium {
+  font-size: medium;
+}
+
+.spectacular .typography .xx-small, .spectacular.typography .xx-small, .spectacularly .typography .xx-small, .spectacularly.typography .xx-small {
+  font-size: xx-small;
+}
+
+.spectacular .typography .x-small, .spectacular.typography .x-small, .spectacularly .typography .x-small, .spectacularly.typography .x-small {
+  font-size: x-small;
+}
+
+.spectacular .typography .small, .spectacular.typography .small, .spectacularly .typography .small, .spectacularly.typography .small {
+  font-size: small;
+}
+
+.spectacular .typography .large, .spectacular.typography .large, .spectacularly .typography .large, .spectacularly.typography .large {
+  font-size: large;
+}
+
+.spectacular .typography .x-large, .spectacular.typography .x-large, .spectacularly .typography .x-large, .spectacularly.typography .x-large {
+  font-size: x-large;
+}
+
+.spectacular .typography .xx-large, .spectacular.typography .xx-large, .spectacularly .typography .xx-large, .spectacularly.typography .xx-large {
+  font-size: xx-large;
+}
+
+.spectacular .typography .smaller, .spectacular.typography .smaller, .spectacularly .typography .smaller, .spectacularly.typography .smaller {
+  font-size: smaller;
+}
+
+.spectacular .typography .larger, .spectacular.typography .larger, .spectacularly .typography .larger, .spectacularly.typography .larger {
+  font-size: larger;
+}
+
+.spectacular .typography.legible, .spectacular.typography.legible, .spectacularly .typography.legible, .spectacularly.typography.legible {
   font-size: var(--legible-font-size, 120%);
 }
-.typography.very.legible {
+.spectacular .typography.very.legible, .spectacular.typography.very.legible, .spectacularly .typography.very.legible, .spectacularly.typography.very.legible {
   font-size: var(--very-legible-font-size, 200%);
 }
-.typography.extremely.legible {
+.spectacular .typography.extremely.legible, .spectacular.typography.extremely.legible, .spectacularly .typography.extremely.legible, .spectacularly.typography.extremely.legible {
   font-size: var(--extremely-legible-font-size, 400%);
 }
-.typography.balanced {
+.spectacular .typography.balanced, .spectacular.typography.balanced, .spectacularly .typography.balanced, .spectacularly.typography.balanced {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+[hidden="visually"] {
+  display: inline;
 }
 
 *:target {
@@ -470,6 +551,11 @@ section:not([role="banner"]):not([role="contentinfo"]):not(.greedy), footer:not(
   color: #48440f;
 }
 
+#install {
+  background: #d9b9fa;
+  color: #2c0652;
+}
+
 pre {
   text-align: left;
   margin: 0 auto;
@@ -480,6 +566,11 @@ footer[role="contentinfo"] {
   background: #adeae9;
   color: #025b84;
   --border-color: #7cdedc;
+}
+footer[role="contentinfo"] .flexible.balanced {
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
 }
 footer[role="contentinfo"] p {
   max-width: 64ch;
@@ -494,11 +585,11 @@ body > section {
 body > section div {
   max-width: 74ch;
 }
-body > section > div {
+body > section > div, body > section header > div, body > section details > div {
   margin-left: auto;
   margin-right: auto;
 }
-body > section > div pre {
+body > section > div pre, body > section header > div pre, body > section details > div pre {
   background: rgba(255, 255, 255, 0.36);
   border: 1px solid rgba(72, 68, 15, 0.24);
   border-radius: .5em;
@@ -564,6 +655,13 @@ section[role="banner"] h1, header[role="banner"] h1 {
   justify-content: center;
   align-items: center;
 }
+#cover footer {
+  margin-top: 1rem;
+}
+#cover iframe {
+  min-width: 80px;
+  min-height: 28px;
+}
 #cover p {
   font-size: larger;
 }
@@ -608,8 +706,25 @@ body > nav {
   text-align: center;
 }
 
+.button {
+  font-size: larger;
+  display: block;
+  color: currentColor;
+  border: 1px solid currentColor;
+  border-bottom-width: .1875em;
+  text-decoration: none;
+  border-radius: .25em;
+  padding: .25em;
+}
+.button:hover, .button:focus {
+  background: #025b84;
+  color: #cdf2f2;
+  border-color: #013148;
+}
+
 section.greedy {
-  min-height: 100vh;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 
 /*# sourceMappingURL=spectacular-1.0.0.css.map */

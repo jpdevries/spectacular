@@ -1,80 +1,145 @@
-@mixin alphabetical-grid-areas($areas: $alphabet) {
-  @each $area in $areas {
-    .grid-area-#{$area} {
-      grid-area: #{$area};
-    }
-  }
-}
 
-%alphabetical-grid-areas {
-  @include alphabetical-grid-areas;
+
+%grid-areas {
+  @include grid-areas;
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: var(--box-sizing, $box-sizing);
 }
 
-body.layout {
-  margin: var(--margin, 0);
-}
+.spectacular, .spectacularly {
+  &.layout, .layout {
 
-.layout {
+    img:not(.uncontained) {
+      @extend %contained;
+    }
+    &.persistent {
+      position: sticky;
+      top:0;
+    }
+    &.grid {
+      @extend %grid;
+    }
+    .item {
+      &.padded {
+        padding: var(--flexible-item-padding, var(--item-padding, var(--padding, 1rem)));
+      }
+    }
 
-  img:not(.uncontained) {
-    @extend %contained;
-  }
-  &.persistent {
-    position: sticky;
-    top:0;
-  }
-  &.grid {
-    @extend %grid;
-  }
-  &.flexible {
-    @extend %flex;
-    &.unbiased {
-      @extend %flexibly-equal-children;
-      > * {
-        margin-right: var(--flexible-unbiased-item-margin-right, 1rem);
-        &:last-child {
-          margin-right: var(--flexible-unbiased-last-item-margin-right, 0);
+    // Flexible Layout
+    //
+    // A better description
+    //
+    // Markup: ../../kss/layout.flexible.html
+    //
+    // Style guide: Bootstraps.layout.flexible
+
+    &.flexible {
+      @extend %flex;
+
+
+      // Flexible Reversed Layout
+      //
+      // Reversed flexible layout
+      //
+      // Markup: ../../kss/layout.flexible.reversed.html
+      //
+      // Style guide: Bootstraps.layout.flexible.reversed
+
+      &.reversed {
+        flex-direction: row-reverse;
+      }
+
+      // Flexible Vertical Reversed Layout
+      //
+      // Reversed vertical flexible layout
+      //
+      // Markup: ../../kss/vertical.layout.flexible.reversed.html
+      //
+      // Style guide: Bootstraps.layout.flexible.reversed.vertical
+
+      &.vertical {
+        flex-direction: column;
+        &.reversed {
+          flex-direction: column-reverse;
+        }
+      }
+
+      // Unbiased Layouts
+      //
+      // Unbiased flexible layout
+      //
+      // Markup: ../../kss/layout.flexible.unbiased.html
+      //
+      // Style guide: Bootstraps.layout.flexible.unbiased
+
+      &.unbiased {
+        @extend %flexibly-equal-children;
+        > * {
+          margin-right: var(--flexible-unbiased-item-margin-right, var(--item-margin-right, 1rem));
+          &:last-child {
+            margin-right: var(--flexible-unbiased-last-item-margin-right, var(--last-item-margin-right, 0));
+          }
         }
       }
     }
-  }
 
-  &.cover {
-    @extend %greedy;
-    min-height: var(--cover-min-height, 100vh);
-  }
-
-  &.balanced {
-    //@extend %balanced;
-    margin-left: auto;
-    margin-right: auto;
-    --module-margin-left: auto;
-    --module-margin-right: auto;
-  }
-
-  &.thin {
-    max-width: var(--layout-thin-max-width, var(--max-width, 18em));
-  }
-
-  &.very {
-    &.greedy {
-      @extend %very-greedy;
+    &.cover {
+      @extend %greedy;
+      min-height: var(--cover-min-height, 100vh);
     }
-    &.legible {
+
+    &.center, &.centered {
+      text-align: center;
+    }
+
+    // Balanced Layouts
+    //
+    // Balancing layouts
+    //
+    // Markup: ../../kss/layout.thin.html
+    //
+    // Style guide: Bootstraps.layout.balanced
+
+    &.balanced {
+      //@extend %balanced;
+      margin-left: auto;
+      margin-right: auto;
+      --module-margin-left: auto;
+      --module-margin-right: auto;
 
     }
+
+    // Thin Layouts
+    //
+    // Thin layout
+    //
+    // Markup: ../../kss/layout.thin.html
+    //
+    // Style guide: Bootstraps.layout.thin
+
+    &.thin {
+      max-width: var(--layout-thin-max-width, var(--max-width, 18em));
+    }
+
+    &.very {
+      &.greedy {
+        @extend %very-greedy;
+      }
+      &.legible {
+
+      }
+    }
+    &.contained, .shrinkable {
+      @extend %contained;
+    }
+    &.clearfix {
+      @extend %clearfix;
+    }
+    &.vulnerable {
+      @extend %vulnerable;
+    }
   }
-  &.contained, .shrinkable {
-    @extend %contained;
-  }
-  &.clearfix {
-    @extend %clearfix;
-  }
-  &.vulnerable {
-    @extend %vulnerable;
-  }
+
 }

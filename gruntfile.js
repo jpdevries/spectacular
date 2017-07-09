@@ -9,7 +9,9 @@ module.exports = function(grunt) {
             'lib': './lib/',
             'scss': './app/assets/stylesheets/',
             'assets': './assets/',
-            'css': './css/'
+            'css': './css/',
+            'styleguide': './styleguide/',
+            'kssassets': './kss-assets/'
         },
         bower: {
             install: {
@@ -45,7 +47,8 @@ module.exports = function(grunt) {
                     //banner: '/*!' + '\n* <%= pkg.title %> - v<%= pkg.version %> %>' + '\n* Copyright (C) <%= grunt.template.today("yyyy") %> modmore' + '\n*/'
                 },
                 files: {
-                    '<%= dirs.assets %><%= dirs.css %>spectacular-<%= pkg.version %>.css': '<%= dirs.scss %>main.scss'
+                    '<%= dirs.assets %><%= dirs.css %>spectacular-<%= pkg.version %>.css': '<%= dirs.scss %>main.scss',
+                    './styleguide/kss-assets/css/spectacular.css': '<%= dirs.scss %>spectacular.scss'
                 }
             }
         },

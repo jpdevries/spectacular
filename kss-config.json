@@ -4,6 +4,8 @@
   "destination": "styleguide/",
   "builder": "node_modules/michelangelo/kss_styleguide/custom-template/",
   "css": [
-    "../assets/css/spectacular-1.0.0.css"
+    "./kss-assets/css/kss.css",
+    "./kss-assets/css/spectacular.css",
+    "https://cloud.typography.com/6068232/7856572/css/fonts.css"
   ]
 }

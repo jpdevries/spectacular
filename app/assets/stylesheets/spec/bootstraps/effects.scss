@@ -1,7 +1,23 @@
+// Effects
+//
+// Effects inverted
+//
+// Use <code>.spectacular.inverted</code> to invert the colors of an&nbsp;element. Useful for responding to accessibility&nbsp;preferences.
+//
+// Markup: ../../kss/inverted.html
+//
+// Style guide: Bootstraps.Effects.inverted
 .inverted {
   @extend %inverted;
 }
 
+// grayscale
+//
+// Use <code>.spectacular.grayscale</code> or <code>.spectacular.greyscale</code> to completely desaturate the colors of an&nbsp;element. Useful for responding to accessibility&nbsp;preferences.
+//
+// Markup: ../../kss/desaturate.html
+//
+// Style guide: Bootstraps.Effects.desaturate
 .grayscale, .greyscale {
   @extend %grayscale;
 }
