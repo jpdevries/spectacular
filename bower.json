@@ -32,6 +32,6 @@
   "exportsOverride": {
     "spectacular": {
       "": "app/assets/stylesheets/"
-    },
+    }
   }
 }
