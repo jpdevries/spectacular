@@ -10,13 +10,21 @@
 }
 
 %button {
-  background: var(--button-background, var(--background));
-  border: var(--button-border, var(--border));
-  border-color: var(--button-border-color, var(--border-color));
+  background: var(--button-background, var(--background, auto));
+  border: var(--button-border, var(--border, auto));
+  border-color: var(--button-border-color, var(--border-color, currentColor));
   color: var(--button-color, var(--color));
   text-decoration: var(--button-text-decoration, var(--text-decoration));
   display: var(--button-display);
   padding: var(--button-padding, var(--padding));
+  appearance: var(--button-appearance, button);
+
+  &.secondary {
+    background: var(--button-secondary-background, var(--button-background, var(--background, auto)));
+    border: var(--button-secondary-border, var(--button-border, var(--border, auto)));
+    border-color: var(--button-secondary-border-color, var(--button-border-color, var(--border-color, currentColor)));
+    color: var(--button-secondary-color, var(--button-color, var(--color, currentColor)));
+  }
 
   &.smooth {
     transition: var(--transition, all 420ms ease);

@@ -1,6 +1,6 @@
 {
   "name": "spectacular",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/jpdevries/spectacular",
   "authors": [
     "JP DeVries <johnpaul.devries@gmail.com>"
@@ -13,10 +13,17 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
+    "app/assets/kss",
+    "assets/",
+    "gruntfile.js",
+    "index.html",
+    "kss-config.json",
+    "module.html",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "yark.lock"
   ],
   "devDependencies": {
     "bourbon": "~4.2.5",

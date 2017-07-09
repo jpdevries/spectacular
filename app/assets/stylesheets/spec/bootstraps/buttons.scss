@@ -8,3 +8,14 @@
 button, .button {
   @extend %button;
 }
+
+// [role="button"]
+//
+// Extends <code>%button</code>
+//
+// Markup: ../../kss/role.button.html
+//
+// Style guide: Bootstraps.ARIA.button
+[role="button"] {
+  @extend %button;
+}

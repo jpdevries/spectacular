@@ -2,7 +2,7 @@
   width: var(--greedy, 100%);
 }
 
-.spectacular .typography .capitalized, .spectacular.typography .capitalized, .spectacularly .typography .capitalized, .spectacularly.typography .capitalized {
+.spectacular .typography .capitalized, .spectacular .typography .caps, .spectacular .typography.capitalized, .spectacular .typography.caps, .spectacular.typography .capitalized, .spectacular.typography .caps, .spectacular.typography.capitalized, .spectacular.typography.caps, .spectacularly .typography .capitalized, .spectacularly .typography .caps, .spectacularly .typography.capitalized, .spectacularly .typography.caps, .spectacularly.typography .capitalized, .spectacularly.typography .caps, .spectacularly.typography.capitalized, .spectacularly.typography.caps {
   text-transform: uppercase;
 }
 
@@ -82,19 +82,6 @@ body:hover [hidden="visually"] a, body:hover .visually-hidden a, body:hover [hid
 
 [role="alert"] {
   color: var(--alert-color, var(--dangerous-color, red));
-}
-
-[role="button"] {
-  background: var(--button-background, var(--background));
-  border: var(--button-border, var(--border));
-  border-color: var(--button-border-color, var(--border-color));
-  color: var(--button-color, var(--color));
-  text-decoration: var(--button-text-decoration, var(--text-decoration));
-  display: var(--button-display);
-  padding: var(--button-padding, var(--padding));
-}
-.smooth[role="button"] {
-  transition: var(--transition, all 420ms ease);
 }
 
 .spectacular.layout.flexible, .spectacular .layout.flexible, .spectacularly.layout.flexible, .spectacularly .layout.flexible {
@@ -464,6 +451,9 @@ div.foo .grid-area-z {
   font-size: larger;
 }
 
+.spectacular .typography small.capitalized, .spectacular .typography small .capitalized, .spectacular .typography small.caps, .spectacular .typography small .caps, .spectacular .typography .small.caps, .spectacular.typography small.capitalized, .spectacular.typography small .capitalized, .spectacular.typography small.caps, .spectacular.typography small .caps, .spectacular.typography .small.caps, .spectacularly .typography small.capitalized, .spectacularly .typography small .capitalized, .spectacularly .typography small.caps, .spectacularly .typography small .caps, .spectacularly .typography .small.caps, .spectacularly.typography small.capitalized, .spectacularly.typography small .capitalized, .spectacularly.typography small.caps, .spectacularly.typography small .caps, .spectacularly.typography .small.caps {
+  font-variant: var(--small-caps, small-caps);
+}
 .spectacular .typography.legible, .spectacular.typography.legible, .spectacularly .typography.legible, .spectacularly.typography.legible {
   font-size: var(--legible-font-size, 120%);
 }

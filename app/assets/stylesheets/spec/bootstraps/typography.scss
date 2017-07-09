@@ -47,8 +47,19 @@
     // Markup: ../../kss/typography.captalized.html
     //
     // Style guide: Bootstraps.typography.captalized
-    .capitalized {
+    .capitalized, .caps, &.capitalized, &.caps {
       @extend %capitalized;
+    }
+
+    // Small Caps
+    //
+    // Styles text will small&nbsp;caps.
+    //
+    // Markup: ../../kss/typography.small-caps.html
+    //
+    // Style guide: Bootstraps.typography.small-caps
+    small.capitalized, small .capitalized, small.caps, small .caps, .small.caps {
+      font-variant: var(--small-caps, small-caps);
     }
 
     // Medium Text

@@ -1,4 +1,12 @@
 <style type="text/css">
+  body {
+    --button-background: rebeccapurple;
+    --button-color: white;
+    --button-padding: 1em;
+
+    --button-secondary-background: blue;
+    --button-secondary-color: white;
+  }
   .my.button {
     --button-background: rebeccapurple;
     --button-color: white;
@@ -18,8 +26,24 @@
   .my.smooth.button {
     --transition: all 360ms ease;
   }
+  .my.button.orange {
+    --button-background: orange;
+    --button-color: white;
+  }
+  .my.button.orange:hover, .my.button.orange:focus {
+    --button-background: white;
+    --button-color: orange;
+  }
+  .my.button.secondary:hover, .my.secondary.orange:focus {
+    --button-secondary-background: white;
+    --button-secondary-color: blue;
+  }
 </style>
 
-<a href="#" class="my spectacular button">This is a link that looks like a button</a>
-
-<a href="#" class="my smooth spectacular button">This is a smoother link that looks like a button</a>
+<div>
+  <a href="#" class="my spectacular button">This is a link that looks like a button</a>
+  <a href="#" class="my smooth spectacular button">This is a orange button</a>
+</div>
+<div>
+  <a href="#" class="my spectacular secondary button">This is a secondary button</a>
+</div>

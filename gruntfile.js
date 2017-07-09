@@ -75,8 +75,11 @@ module.exports = function(grunt) {
                     livereload: 35729
                 },
                 files: '<%= dirs.scss %>**/*.scss',
-                tasks: ['sass:dev']
+                tasks: ['sass:dev', 'exec:kss']
             }
+        },
+        exec: {
+          kss: 'npm run kss'
         },
         growl: { /* optional growl notifications requires terminal-notifer: gem install terminal-notifier */
             sass: {
@@ -115,6 +118,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-growl');
+    grunt.loadNpmTasks('grunt-exec');
 
     grunt.registerTask('default', ['growl:watch', 'watch']);
     grunt.registerTask('build', ['bower', 'copy', 'sass:dev']);
