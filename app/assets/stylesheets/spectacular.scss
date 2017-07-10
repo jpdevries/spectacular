@@ -86,8 +86,32 @@
   font-style: italic;
 }
 
+.kss-header, .kss-header__hamburger {
+  color: rebeccapurple;
+}
+
+.kss-header__hamburger {
+  background: rebeccapurple;
+  &:before, &:after {
+    background: rebeccapurple;
+  }
+}
+
+.kss-section__description a, .kss-markdown a {
+  color: rebeccapurple;
+  &:hover, :focus {
+    background: rebeccapurple;
+    color: white;
+    outline: 2px solid rebeccapurple;
+  }
+}
+
 body {
   @extend %operator-screensmart-book;
+}
+
+.kss-markdown h1, .kss-markdown h2 {
+  color: rebeccapurple;
 }
 
 .kss-section__item {
@@ -112,6 +136,22 @@ pre, code[class*="language-"], pre[class*="language-"] {
 
 .kss-markdown h1, .kss-markdown h2, .kss-markdown h3, .kss-markdown h4, .kss-markdown h5, .kss-markdown h6 {
   @extend %operator-screensmart-bold-italic;
+}
+
+.kss-markdown ul, .kss-markdown ol, .kss-markdown dl, .kss-markdown dd, .kss-markdown blockquote, .kss-markdown hr, .kss-markdown table, .kss-markdown form, .kss-markdown fieldset, .kss-markdown figure, .kss-markdown pre, .kss-markdown address, .kss-markdown a, .kss-markdown p, .kss-markdown h1, .kss-markdown h2, .kss-markdown h3, .kss-markdown h4, .kss-markdown h5, .kss-markdown h6 {
+  font-family: "Operator SSm A", "Operator SSm B";
+}
+
+.kss-markdown a {
+  color: rebeccapurple;
+}
+
+.kss-navigation__title {
+  @extend %operator-screensmart-bold-italic;
+}
+
+.kss-markdown h3, .kss-markdown h4, .kss-markdown h5, .kss-markdown h6 {
+  color: rebeccapurple;
 }
 
 .kss-section__content {

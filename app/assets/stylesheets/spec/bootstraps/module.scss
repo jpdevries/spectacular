@@ -1,3 +1,5 @@
-.module {
-  @extend %module;
+.spectacular, .spectacularly {
+  .module, &.module {
+    @extend %module;
+  }
 }

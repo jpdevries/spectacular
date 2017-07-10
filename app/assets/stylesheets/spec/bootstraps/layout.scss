@@ -33,10 +33,22 @@
     //
     // Markup: ../../kss/layout.flexible.html
     //
-    // Style guide: Bootstraps.layout.flexible
+    // Style guide: Straps.layout.flexible
 
-    &.flexible {
+    &.flexible, &.flexibly, .flexible, .flexibly {
       @extend %flex;
+
+      // Flexibly Balanced
+      //
+      // Flexibly flexible layout
+      //
+      // Markup: ../../kss/layout.flexibly.balanced.html
+      //
+      // Style guide: Straps.layout.flexibly-balanced
+      &.balanced, .balanced {
+        justify-content: var(--flexibly-balanced-justify-content, center);
+        align-items: var(--flexibly-balanced-align-items, center);
+      }
 
 
       // Flexible Reversed Layout
@@ -45,7 +57,7 @@
       //
       // Markup: ../../kss/layout.flexible.reversed.html
       //
-      // Style guide: Bootstraps.layout.flexible.reversed
+      // Style guide: Straps.layout.flexible-reversed
 
       &.reversed {
         flex-direction: row-reverse;
@@ -57,7 +69,7 @@
       //
       // Markup: ../../kss/vertical.layout.flexible.reversed.html
       //
-      // Style guide: Bootstraps.layout.flexible.reversed.vertical
+      // Style guide: Straps.layout.flexible.reversed-vertical
 
       &.vertical {
         flex-direction: column;
@@ -72,7 +84,7 @@
       //
       // Markup: ../../kss/layout.flexible.unbiased.html
       //
-      // Style guide: Bootstraps.layout.flexible.unbiased
+      // Style guide: Straps.layout.flexible.unbiased
 
       &.unbiased {
         @extend %flexibly-equal-children;
@@ -85,7 +97,7 @@
       }
     }
 
-    &.cover {
+    &.cover, .cover {
       @extend %greedy;
       min-height: var(--cover-min-height, 100vh);
     }
@@ -94,21 +106,20 @@
       text-align: center;
     }
 
-    // Balanced Layouts
+    // Balanced Layout
     //
-    // Balancing layouts
+    // <code>.balanced.layout</code> and <code>.layout .balanced</code> set <code>margin-left</code>, <code>margin-right</code>, <code>--module-margin-left</code>, <code>--module-margin-right</code> to <code>auto</code>.
     //
     // Markup: ../../kss/layout.thin.html
     //
-    // Style guide: Bootstraps.layout.balanced
+    // Style guide: Straps.layout.balanced
 
-    &.balanced {
+    &.balanced, .balanced {
       //@extend %balanced;
       margin-left: auto;
       margin-right: auto;
       --module-margin-left: auto;
       --module-margin-right: auto;
-
     }
 
     // Thin Layouts
@@ -117,7 +128,7 @@
     //
     // Markup: ../../kss/layout.thin.html
     //
-    // Style guide: Bootstraps.layout.thin
+    // Style guide: Straps.layout.thin
 
     &.thin {
       max-width: var(--layout-thin-max-width, var(--max-width, 18em));

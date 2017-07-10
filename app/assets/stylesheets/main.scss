@@ -26,6 +26,17 @@
   }
 }
 
+body {
+  margin: 0;
+}
+
+p {
+  text-align: left;
+  header & {
+    text-align: center;
+  }
+}
+
 %operator-screensmart {
   font-family: "Operator SSm A", "Operator SSm B";
 }
@@ -145,7 +156,7 @@ pre {
 footer[role="contentinfo"] {
   text-align: center;
 
-  .flexible.balanced {
+  .flexible.balanced, .flexibly.balanced {
     justify-content: center;
     align-items: center;
     display: inline-flex;

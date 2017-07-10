@@ -8,9 +8,10 @@ module.exports = function(grunt) {
         dirs: {
             'lib': './lib/',
             'scss': './app/assets/stylesheets/',
+            'app': './app/',
             'assets': './assets/',
             'css': './css/',
-            'styleguide': './styleguide/',
+            'styleguide': './docs/',
             'kssassets': './kss-assets/'
         },
         bower: {
@@ -48,14 +49,17 @@ module.exports = function(grunt) {
                 },
                 files: {
                     '<%= dirs.assets %><%= dirs.css %>spectacular-<%= pkg.version %>.css': '<%= dirs.scss %>main.scss',
-                    './styleguide/kss-assets/css/spectacular.css': '<%= dirs.scss %>spectacular.scss'
+                    '<%= dirs.styleguide %><%= dirs.kssassets %>css/spectacular.css': '<%= dirs.scss %>spectacular.scss'
                 }
             }
         },
         cssmin: {
+            options: {
+              report: 'gzip'
+            },
             ship: {
                 files: {
-                    '<%= dirs.assets %><%= dirs.css %>spectacular-<%= pkg.version %>.min.css': '<%= dirs.assets %><%= dirs.css %>spectacular-<%= pkg.version %>.min.css'
+                    '<%= dirs.assets %><%= dirs.css %>spectacular-<%= pkg.version %>.min.css': '<%= dirs.assets %><%= dirs.css %>spectacular-<%= pkg.version %>.css'
                 }
             }
         },
@@ -67,8 +71,8 @@ module.exports = function(grunt) {
                 options: {
                     livereload: 35729
                 },
-                files: './*.html',
-                tasks: ['sass:dev']
+                files: ['./*.html', '<%= dirs.scss %>spec/homepage.md'],
+                tasks: ['sass:dev', 'exec:kss']
             },
             scss: {
                 options: {
@@ -79,7 +83,8 @@ module.exports = function(grunt) {
             }
         },
         exec: {
-          kss: 'npm run kss'
+          kss: 'npm run kss',
+          gzip: 'gzip -c <%= dirs.assets %><%= dirs.css %>spectacular-<%= pkg.version %>.min.css | wc -c'
         },
         growl: { /* optional growl notifications requires terminal-notifer: gem install terminal-notifier */
             sass: {
@@ -121,5 +126,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-exec');
 
     grunt.registerTask('default', ['growl:watch', 'watch']);
-    grunt.registerTask('build', ['bower', 'copy', 'sass:dev']);
+    grunt.registerTask('build', ['bower', 'copy', 'sass:dev', 'cssmin']);
 };

@@ -14,7 +14,7 @@
 //
 // Markup: ../../kss/role.presentation.html
 //
-// Style guide: Bootstraps.ARIA.presentation
+// Style guide: Straps.ARIA.presentation
 a[role="presentation"] {
   color: var(--anchor-presentation-color, currentColor);
   text-decoration: var(--anchor-presentation-text-decoration, none);
@@ -31,7 +31,7 @@ a[role="presentation"] {
 //
 // Markup: ../../kss/content.info.html
 //
-// Style guide: Bootstraps.ARIA.contentinfo
+// Style guide: Straps.ARIA.contentinfo
 [role="contentinfo"] {
   background: var(
     --contentinfo-background,

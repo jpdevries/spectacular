@@ -1,6 +1,7 @@
 {
   "name": "spectacular",
   "version": "0.0.2",
+  "main": "app/assets/stylesheets/spec/tacular.scss",
   "homepage": "https://github.com/jpdevries/spectacular",
   "authors": [
     "JP DeVries <johnpaul.devries@gmail.com>"
@@ -14,6 +15,9 @@
   "ignore": [
     "**/.*",
     "app/assets/kss",
+    "app/assets/stylesheets/spec/homepage.md",
+    "app/assets/stylesheets/main.scss",
+    "app/assets/stylesheets/spectacular.scss",
     "assets/",
     "gruntfile.js",
     "index.html",

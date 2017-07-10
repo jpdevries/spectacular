@@ -1,4 +1,4 @@
-.spectacular.layout.cover, .spectacular .layout.cover, .spectacularly.layout.cover, .spectacularly .layout.cover, aside[role="search"] form > div input, form[action*="signup"] input {
+.spectacular.layout.cover, .spectacular.layout .cover, .spectacular .layout.cover, .spectacular .layout .cover, .spectacularly.layout.cover, .spectacularly.layout .cover, .spectacularly .layout.cover, .spectacularly .layout .cover, aside[role="search"] form > div input, form[action*="signup"] input {
   width: var(--greedy, 100%);
 }
 
@@ -34,7 +34,7 @@ section[role="banner"], header[role="banner"] {
   margin: var(--vulerable-margin, 0);
 }
 
-.spectacular.layout.flexible.unbiased > *, .spectacular .layout.flexible.unbiased > *, .spectacularly.layout.flexible.unbiased > *, .spectacularly .layout.flexible.unbiased > * {
+.spectacular.layout.flexible.unbiased > *, .spectacular.layout.flexibly.unbiased > *, .spectacular.layout .flexible.unbiased > *, .spectacular.layout .flexibly.unbiased > *, .spectacular .layout.flexible.unbiased > *, .spectacular .layout.flexibly.unbiased > *, .spectacular .layout .flexible.unbiased > *, .spectacular .layout .flexibly.unbiased > *, .spectacularly.layout.flexible.unbiased > *, .spectacularly.layout.flexibly.unbiased > *, .spectacularly.layout .flexible.unbiased > *, .spectacularly.layout .flexibly.unbiased > *, .spectacularly .layout.flexible.unbiased > *, .spectacularly .layout.flexibly.unbiased > *, .spectacularly .layout .flexible.unbiased > *, .spectacularly .layout .flexibly.unbiased > * {
   flex: var(--flexibly-equal-children, 1 0 auto);
 }
 
@@ -84,7 +84,7 @@ body:hover [hidden="visually"] a, body:hover .visually-hidden a, body:hover [hid
   color: var(--alert-color, var(--dangerous-color, red));
 }
 
-.spectacular.layout.flexible, .spectacular .layout.flexible, .spectacularly.layout.flexible, .spectacularly .layout.flexible {
+.spectacular.layout.flexible, .spectacular.layout.flexibly, .spectacular.layout .flexible, .spectacular.layout .flexibly, .spectacular .layout.flexible, .spectacular .layout.flexibly, .spectacular .layout .flexible, .spectacular .layout .flexibly, .spectacularly.layout.flexible, .spectacularly.layout.flexibly, .spectacularly.layout .flexible, .spectacularly.layout .flexibly, .spectacularly .layout.flexible, .spectacularly .layout.flexibly, .spectacularly .layout .flexible, .spectacularly .layout .flexibly {
   display: flex;
 }
 
@@ -98,7 +98,7 @@ label {
   text-transform: uppercase;
 }
 
-.module, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy), footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy), header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) {
+.spectacular .module, .spectacular.module, .spectacularly .module, .spectacularly.module, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy), footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy), header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) {
   background: var(--module-background, var(--background, transparent));
   padding: var(--module-padding, var(--padding, 1rem));
   margin: var(--module-margin, var(--margin, 1rem auto));
@@ -106,13 +106,13 @@ label {
   border-radius: var(--module-border-radius, var(--border-radius, 0.5rem));
   color: var(--module-color, var(--color, inherit));
 }
-.module > h1:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > h1:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > h1:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > h1:first-child, .module h2:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h2:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h2:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h2:first-child, .module h3:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h3:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h3:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h3:first-child, .module h4:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h4:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h4:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h4:first-child, .module h5:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h5:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h5:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h5:first-child, .module h6:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h6:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h6:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h6:first-child, .module p:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) p:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) p:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) p:first-child {
+.spectacular .module > h1:first-child, .spectacular.module > h1:first-child, .spectacularly .module > h1:first-child, .spectacularly.module > h1:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > h1:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > h1:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > h1:first-child, .spectacular .module h2:first-child, .spectacular.module h2:first-child, .spectacularly .module h2:first-child, .spectacularly.module h2:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h2:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h2:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h2:first-child, .spectacular .module h3:first-child, .spectacular.module h3:first-child, .spectacularly .module h3:first-child, .spectacularly.module h3:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h3:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h3:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h3:first-child, .spectacular .module h4:first-child, .spectacular.module h4:first-child, .spectacularly .module h4:first-child, .spectacularly.module h4:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h4:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h4:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h4:first-child, .spectacular .module h5:first-child, .spectacular.module h5:first-child, .spectacularly .module h5:first-child, .spectacularly.module h5:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h5:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h5:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h5:first-child, .spectacular .module h6:first-child, .spectacular.module h6:first-child, .spectacularly .module h6:first-child, .spectacularly.module h6:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h6:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h6:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) h6:first-child, .spectacular .module p:first-child, .spectacular.module p:first-child, .spectacularly .module p:first-child, .spectacularly.module p:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) p:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) p:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) p:first-child {
   margin-top: var(--first-child-margin-top, 0);
 }
-.module > *:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > *:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > *:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > *:first-child {
+.spectacular .module > *:first-child, .spectacular.module > *:first-child, .spectacularly .module > *:first-child, .spectacularly.module > *:first-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > *:first-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > *:first-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > *:first-child {
   margin: var(--module-first-child-margin, var(--first-child-margin, auto));
 }
-.module > *:last-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > *:last-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > *:last-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > *:last-child {
+.spectacular .module > *:last-child, .spectacular.module > *:last-child, .spectacularly .module > *:last-child, .spectacularly.module > *:last-child, section:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > *:last-child, footer:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > *:last-child, header:not([role="banner"]):not([role="contentinfo"]):not(.greedy) > *:last-child {
   margin: var(--module-last-child-margin, var(--last-child-margin, auto));
 }
 
@@ -380,28 +380,32 @@ div.foo .grid-area-z {
 .spectacular.layout .item.padded, .spectacular .layout .item.padded, .spectacularly.layout .item.padded, .spectacularly .layout .item.padded {
   padding: var(--flexible-item-padding, var(--item-padding, var(--padding, 1rem)));
 }
-.spectacular.layout.flexible.reversed, .spectacular .layout.flexible.reversed, .spectacularly.layout.flexible.reversed, .spectacularly .layout.flexible.reversed {
+.spectacular.layout.flexible.balanced, .spectacular.layout.flexible .balanced, .spectacular.layout.flexibly.balanced, .spectacular.layout.flexibly .balanced, .spectacular.layout .flexible.balanced, .spectacular.layout .flexible .balanced, .spectacular.layout .flexibly.balanced, .spectacular.layout .flexibly .balanced, .spectacular .layout.flexible.balanced, .spectacular .layout.flexible .balanced, .spectacular .layout.flexibly.balanced, .spectacular .layout.flexibly .balanced, .spectacular .layout .flexible.balanced, .spectacular .layout .flexible .balanced, .spectacular .layout .flexibly.balanced, .spectacular .layout .flexibly .balanced, .spectacularly.layout.flexible.balanced, .spectacularly.layout.flexible .balanced, .spectacularly.layout.flexibly.balanced, .spectacularly.layout.flexibly .balanced, .spectacularly.layout .flexible.balanced, .spectacularly.layout .flexible .balanced, .spectacularly.layout .flexibly.balanced, .spectacularly.layout .flexibly .balanced, .spectacularly .layout.flexible.balanced, .spectacularly .layout.flexible .balanced, .spectacularly .layout.flexibly.balanced, .spectacularly .layout.flexibly .balanced, .spectacularly .layout .flexible.balanced, .spectacularly .layout .flexible .balanced, .spectacularly .layout .flexibly.balanced, .spectacularly .layout .flexibly .balanced {
+  justify-content: var(--flexibly-balanced-justify-content, center);
+  align-items: var(--flexibly-balanced-align-items, center);
+}
+.spectacular.layout.flexible.reversed, .spectacular.layout.flexibly.reversed, .spectacular.layout .flexible.reversed, .spectacular.layout .flexibly.reversed, .spectacular .layout.flexible.reversed, .spectacular .layout.flexibly.reversed, .spectacular .layout .flexible.reversed, .spectacular .layout .flexibly.reversed, .spectacularly.layout.flexible.reversed, .spectacularly.layout.flexibly.reversed, .spectacularly.layout .flexible.reversed, .spectacularly.layout .flexibly.reversed, .spectacularly .layout.flexible.reversed, .spectacularly .layout.flexibly.reversed, .spectacularly .layout .flexible.reversed, .spectacularly .layout .flexibly.reversed {
   flex-direction: row-reverse;
 }
-.spectacular.layout.flexible.vertical, .spectacular .layout.flexible.vertical, .spectacularly.layout.flexible.vertical, .spectacularly .layout.flexible.vertical {
+.spectacular.layout.flexible.vertical, .spectacular.layout.flexibly.vertical, .spectacular.layout .flexible.vertical, .spectacular.layout .flexibly.vertical, .spectacular .layout.flexible.vertical, .spectacular .layout.flexibly.vertical, .spectacular .layout .flexible.vertical, .spectacular .layout .flexibly.vertical, .spectacularly.layout.flexible.vertical, .spectacularly.layout.flexibly.vertical, .spectacularly.layout .flexible.vertical, .spectacularly.layout .flexibly.vertical, .spectacularly .layout.flexible.vertical, .spectacularly .layout.flexibly.vertical, .spectacularly .layout .flexible.vertical, .spectacularly .layout .flexibly.vertical {
   flex-direction: column;
 }
-.spectacular.layout.flexible.vertical.reversed, .spectacular .layout.flexible.vertical.reversed, .spectacularly.layout.flexible.vertical.reversed, .spectacularly .layout.flexible.vertical.reversed {
+.spectacular.layout.flexible.vertical.reversed, .spectacular.layout.flexibly.vertical.reversed, .spectacular.layout .flexible.vertical.reversed, .spectacular.layout .flexibly.vertical.reversed, .spectacular .layout.flexible.vertical.reversed, .spectacular .layout.flexibly.vertical.reversed, .spectacular .layout .flexible.vertical.reversed, .spectacular .layout .flexibly.vertical.reversed, .spectacularly.layout.flexible.vertical.reversed, .spectacularly.layout.flexibly.vertical.reversed, .spectacularly.layout .flexible.vertical.reversed, .spectacularly.layout .flexibly.vertical.reversed, .spectacularly .layout.flexible.vertical.reversed, .spectacularly .layout.flexibly.vertical.reversed, .spectacularly .layout .flexible.vertical.reversed, .spectacularly .layout .flexibly.vertical.reversed {
   flex-direction: column-reverse;
 }
-.spectacular.layout.flexible.unbiased > *, .spectacular .layout.flexible.unbiased > *, .spectacularly.layout.flexible.unbiased > *, .spectacularly .layout.flexible.unbiased > * {
+.spectacular.layout.flexible.unbiased > *, .spectacular.layout.flexibly.unbiased > *, .spectacular.layout .flexible.unbiased > *, .spectacular.layout .flexibly.unbiased > *, .spectacular .layout.flexible.unbiased > *, .spectacular .layout.flexibly.unbiased > *, .spectacular .layout .flexible.unbiased > *, .spectacular .layout .flexibly.unbiased > *, .spectacularly.layout.flexible.unbiased > *, .spectacularly.layout.flexibly.unbiased > *, .spectacularly.layout .flexible.unbiased > *, .spectacularly.layout .flexibly.unbiased > *, .spectacularly .layout.flexible.unbiased > *, .spectacularly .layout.flexibly.unbiased > *, .spectacularly .layout .flexible.unbiased > *, .spectacularly .layout .flexibly.unbiased > * {
   margin-right: var(--flexible-unbiased-item-margin-right, var(--item-margin-right, 1rem));
 }
-.spectacular.layout.flexible.unbiased > *:last-child, .spectacular .layout.flexible.unbiased > *:last-child, .spectacularly.layout.flexible.unbiased > *:last-child, .spectacularly .layout.flexible.unbiased > *:last-child {
+.spectacular.layout.flexible.unbiased > *:last-child, .spectacular.layout.flexibly.unbiased > *:last-child, .spectacular.layout .flexible.unbiased > *:last-child, .spectacular.layout .flexibly.unbiased > *:last-child, .spectacular .layout.flexible.unbiased > *:last-child, .spectacular .layout.flexibly.unbiased > *:last-child, .spectacular .layout .flexible.unbiased > *:last-child, .spectacular .layout .flexibly.unbiased > *:last-child, .spectacularly.layout.flexible.unbiased > *:last-child, .spectacularly.layout.flexibly.unbiased > *:last-child, .spectacularly.layout .flexible.unbiased > *:last-child, .spectacularly.layout .flexibly.unbiased > *:last-child, .spectacularly .layout.flexible.unbiased > *:last-child, .spectacularly .layout.flexibly.unbiased > *:last-child, .spectacularly .layout .flexible.unbiased > *:last-child, .spectacularly .layout .flexibly.unbiased > *:last-child {
   margin-right: var(--flexible-unbiased-last-item-margin-right, var(--last-item-margin-right, 0));
 }
-.spectacular.layout.cover, .spectacular .layout.cover, .spectacularly.layout.cover, .spectacularly .layout.cover {
+.spectacular.layout.cover, .spectacular.layout .cover, .spectacular .layout.cover, .spectacular .layout .cover, .spectacularly.layout.cover, .spectacularly.layout .cover, .spectacularly .layout.cover, .spectacularly .layout .cover {
   min-height: var(--cover-min-height, 100vh);
 }
 .spectacular.layout.center, .spectacular.layout.centered, .spectacular .layout.center, .spectacular .layout.centered, .spectacularly.layout.center, .spectacularly.layout.centered, .spectacularly .layout.center, .spectacularly .layout.centered {
   text-align: center;
 }
-.spectacular.layout.balanced, .spectacular .layout.balanced, .spectacularly.layout.balanced, .spectacularly .layout.balanced {
+.spectacular.layout.balanced, .spectacular.layout .balanced, .spectacular .layout.balanced, .spectacular .layout .balanced, .spectacularly.layout.balanced, .spectacularly.layout .balanced, .spectacularly .layout.balanced, .spectacularly .layout .balanced {
   margin-left: auto;
   margin-right: auto;
   --module-margin-left: auto;
@@ -478,6 +482,17 @@ div.foo .grid-area-z {
   text-decoration: var(--target-text-decoration, inherit);
   border: var(--target-border, inherit);
   box-shadow: var(--target-box-shadow, inherit);
+}
+
+body {
+  margin: 0;
+}
+
+p {
+  text-align: left;
+}
+header p {
+  text-align: center;
 }
 
 .operator-screensmart-medium-italic, .operator-screensmart-bold, body > section header em h1, body > section header em h2, body > section header em h3, body > section header em h4, body > section header em h5, body > section header em h6 {
@@ -557,7 +572,7 @@ footer[role="contentinfo"] {
   color: #025b84;
   --border-color: #7cdedc;
 }
-footer[role="contentinfo"] .flexible.balanced {
+footer[role="contentinfo"] .flexible.balanced, footer[role="contentinfo"] .flexibly.balanced {
   justify-content: center;
   align-items: center;
   display: inline-flex;

@@ -46,7 +46,7 @@
     //
     // Markup: ../../kss/typography.captalized.html
     //
-    // Style guide: Bootstraps.typography.captalized
+    // Style guide: Straps.typography.captalized
     .capitalized, .caps, &.capitalized, &.caps {
       @extend %capitalized;
     }
@@ -57,7 +57,7 @@
     //
     // Markup: ../../kss/typography.small-caps.html
     //
-    // Style guide: Bootstraps.typography.small-caps
+    // Style guide: Straps.typography.small-caps
     small.capitalized, small .capitalized, small.caps, small .caps, .small.caps {
       font-variant: var(--small-caps, small-caps);
     }
@@ -68,7 +68,7 @@
     //
     // Markup: ../../kss/typography.medium.html
     //
-    // Style guide: Bootstraps.typography.size.medium
+    // Style guide: Straps.typography.size.medium
     .medium {
       @extend %medium;
     }
@@ -79,7 +79,7 @@
     //
     // Markup: ../../kss/typography.xx-small.html
     //
-    // Style guide: Bootstraps.typography.size.xx-small
+    // Style guide: Straps.typography.size.xx-small
     .xx-small {
       @extend %xx-small;
     }
@@ -90,7 +90,7 @@
     //
     // Markup: ../../kss/typography.x-small.html
     //
-    // Style guide: Bootstraps.typography.size.x-small
+    // Style guide: Straps.typography.size.x-small
     .x-small {
       @extend %x-small;
     }
@@ -101,7 +101,7 @@
     //
     // Markup: ../../kss/typography.small.html
     //
-    // Style guide: Bootstraps.typography.size.small
+    // Style guide: Straps.typography.size.small
     .small {
       @extend %small;
     }
@@ -112,7 +112,7 @@
     //
     // Markup: ../../kss/typography.large.html
     //
-    // Style guide: Bootstraps.typography.size.large
+    // Style guide: Straps.typography.size.large
     .large {
       @extend %large;
     }
@@ -123,7 +123,7 @@
     //
     // Markup: ../../kss/typography.x-large.html
     //
-    // Style guide: Bootstraps.typography.size.x-large
+    // Style guide: Straps.typography.size.x-large
     .x-large {
       @extend %x-large;
     }
@@ -134,7 +134,7 @@
     //
     // Markup: ../../kss/typography.xx-large.html
     //
-    // Style guide: Bootstraps.typography.size.xx-large
+    // Style guide: Straps.typography.size.xx-large
     .xx-large {
       @extend %xx-large;
     }
@@ -145,7 +145,7 @@
     //
     // Markup: ../../kss/typography.smaller.html
     //
-    // Style guide: Bootstraps.typography.size.smaller
+    // Style guide: Straps.typography.size.smaller
     .smaller {
       @extend %smaller;
     }
@@ -156,7 +156,7 @@
     //
     // Markup: ../../kss/typography.larger.html
     //
-    // Style guide: Bootstraps.typography.size.larger
+    // Style guide: Straps.typography.size.larger
     .larger {
       @extend %larger;
     }

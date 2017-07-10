@@ -4,9 +4,12 @@
 //
 // Markup: ../../kss/buttons.html
 //
-// Style guide: Bootstraps.buttons
+// Style guide: Straps.buttons
 button, .button {
   @extend %button;
+  &.clickable, &.clicky {
+    @extend %clickable;
+  }
 }
 
 // [role="button"]
@@ -15,7 +18,7 @@ button, .button {
 //
 // Markup: ../../kss/role.button.html
 //
-// Style guide: Bootstraps.ARIA.button
+// Style guide: Straps.ARIA.button
 [role="button"] {
   @extend %button;
 }
