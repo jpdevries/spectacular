@@ -1,6 +1,6 @@
 {
   "name": "spectacular",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "Some spectacular Silent Sass classes, mixins, and breakpoints",
   "main": "app/assets/stylesheets/spec/_tacular.scss",
   "scripts": {
