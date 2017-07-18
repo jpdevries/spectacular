@@ -18,6 +18,8 @@
   display: var(--button-display);
   padding: var(--button-padding, var(--padding));
   appearance: var(--button-appearance, button);
+  font-size: var(--button-font-size, 1em);
+  font-family: var(--button-font-family, inherit);
 
   &.secondary {
     background: var(--button-secondary-background, var(--button-background, var(--background, auto)));
@@ -71,7 +73,7 @@
   //margin-left: var(--module-margin-left, 1rem);
 
 
-  border: var(--module-border, var(--border, 1px solid rgb(220, 220, 220)));
+  border: var(--module-border, var(--border, 1px solid var(--border-color, gainsboro)));
   //border-color: var(--module-border-color, var(--border-color, currentColor));
   border-radius: var(--module-border-radius, var(--border-radius, .5rem));
 

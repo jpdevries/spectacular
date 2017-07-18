@@ -3,19 +3,19 @@
 @import "spec/global/vars";
 
 
-@import "spec/bootstraps/aria";
-@import "spec/bootstraps/base";
-@import "spec/bootstraps/contrast";
-@import "spec/bootstraps/effects";
+@import "spec/straps/aria";
+@import "spec/straps/base";
+@import "spec/straps/contrast";
+@import "spec/straps/effects";
 
-@import "spec/bootstraps/heading";
-@import "spec/bootstraps/layout";
-@import "spec/bootstraps/module";
+@import "spec/straps/heading";
+@import "spec/straps/layout";
+@import "spec/straps/module";
 
-@import "spec/bootstraps/foo";
+@import "spec/straps/foo";
 
-@import "spec/bootstraps/typography";
-@import "spec/bootstraps/visibility";
+@import "spec/straps/typography";
+@import "spec/straps/visibility";
 
 * {
   &:target {
@@ -307,7 +307,7 @@ section, header {
   align-items: center;
 }
 
-#bootstraps {
+#straps {
   background: #cdf2d1;
   color: darken(#cdf2d1, 68%);
 }

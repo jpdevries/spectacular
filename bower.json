@@ -1,6 +1,6 @@
 {
   "name": "spectacular",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "main": "app/assets/stylesheets/spec/tacular.scss",
   "homepage": "https://github.com/jpdevries/spectacular",
   "authors": [

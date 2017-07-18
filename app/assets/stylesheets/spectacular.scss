@@ -1,15 +1,15 @@
 @import "spec/tacular";
 
-@import "spec/bootstraps/aria";
-@import "spec/bootstraps/base";
-@import "spec/bootstraps/buttons";
-@import "spec/bootstraps/contrast";
-@import "spec/bootstraps/effects";
-@import "spec/bootstraps/heading";
-@import "spec/bootstraps/layout";
-@import "spec/bootstraps/module";
-@import "spec/bootstraps/typography";
-@import "spec/bootstraps/visibility";
+@import "spec/straps/aria";
+@import "spec/straps/base";
+@import "spec/straps/buttons";
+@import "spec/straps/contrast";
+@import "spec/straps/effects";
+@import "spec/straps/heading";
+@import "spec/straps/layout";
+@import "spec/straps/module";
+@import "spec/straps/typography";
+@import "spec/straps/visibility";
 
 %operator-screensmart {
   font-family: "Operator SSm A", "Operator SSm B";

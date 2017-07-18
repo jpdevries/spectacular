@@ -102,7 +102,7 @@ label {
   background: var(--module-background, var(--background, transparent));
   padding: var(--module-padding, var(--padding, 1rem));
   margin: var(--module-margin, var(--margin, 1rem auto));
-  border: var(--module-border, var(--border, 1px solid gainsboro));
+  border: var(--module-border, var(--border, 1px solid var(--border-color, gainsboro)));
   border-radius: var(--module-border-radius, var(--border-radius, 0.5rem));
   color: var(--module-color, var(--color, inherit));
 }
@@ -674,7 +674,7 @@ section[role="banner"] h1, header[role="banner"] h1 {
   text-shadow: 3px 3px 0px white;
 }
 
-#bootstraps {
+#straps {
   background: #cdf2d1;
   color: #15501b;
 }
