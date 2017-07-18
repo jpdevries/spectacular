@@ -156,6 +156,10 @@ http://www.phase2technology.com/blog/exploring-maps-in-sass-3-3/
  }
 }
 
+%greedy-cover {
+  @extend %greedy;
+  min-height: var(--cover-min-height, 100vh);
+}
 
 %dropzone {
     @include dropzone();

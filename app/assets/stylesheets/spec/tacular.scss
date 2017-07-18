@@ -12,6 +12,7 @@
 %button {
   background: var(--button-background, var(--background, auto));
   border: var(--button-border, var(--border, auto));
+  border-radius: var(--button-border-radius, var(--border-radius, initial));
   border-color: var(--button-border-color, var(--border-color, currentColor));
   color: var(--button-color, var(--color));
   text-decoration: var(--button-text-decoration, var(--text-decoration));
